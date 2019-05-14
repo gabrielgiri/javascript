@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hoisting JS</title>
+    <script>
+
+(function(){
+    'use strict';
+    var result = 0;
+
+    var sum = function(n1, n2) {
+        console.log("primero" , result);
+        var result = n1 + n2;
+        return result;
+    };
+
+    sum (2,3);
+    console.log("segundo", result);
+})();
+
+//--------------------
+
+console.log(nuevaVariable);
+var nuevaVariable = "Gabriel";
+console.log(nuevaVariable);
+
+//--------------------
+
+var myVar = 100;
+
+function myFunction() {
+    myVar = 300;
+    var myVar;
+}
+myFunction();
+    console.log(myVar);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Deleting Properties JS</title>
+    <script>
+        
+        var fechas = {a: 1985, b:1980, c:1974, d:2001 },
+            myVar= 10;
+       
+        delete fechas.a;
+        delete myVar; // no funciona? deberia usar 'use strict'
+   
+        console.log(fechas);
+        console.log(myVar);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objects JS</title>
+    <script>
+
+        var pelicula = {
+            nombre: 'titanic',
+            director: 'James Cameron',
+            cancion: 'My Heart Will Go On',
+            oscars: 11,
+            actors: {
+                male:'Leonardo DiCaprio',
+                female: 'Kate Winslet'
+            }
+        }
+            
+            pelicula.fecha = 1997;
+
+            console.log(pelicula.director);
+            console.log(pelicula.fecha);
+            console.log(pelicula.actors.male);
+
+            //------------------------------//
+
+            let car = {id: 5000, style:'convertible'};
+            let id, style;
+            ({id, style} = car);
+
+            console.log(id, style);
+
+             //------ Constructor -----//
+
+             function Automovil(id) {
+                 this.automovilId = id;
+
+             }
+
+             let automovil = new Automovil(1973);
+             console.log(automovil.automovilId);
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

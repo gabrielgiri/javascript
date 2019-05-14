@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Read Only JS</title>
+    <script>
+
+
+        var obj = {};
+
+        Object.defineProperty(obj, 'readonly', {
+            enumerable: false,
+            configurable: false,
+            writable: false,
+            value: 'this is read only'
+        })
+
+        obj.readonly = 'new value'; //intento cambiar el valor
+        console.log(obj.readonly);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

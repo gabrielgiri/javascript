@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Equals JS</title>
+    <script>
+
+        var x = 0; 
+        var y = '1'; // probar con true y 'true' 
+
+        if (x == y) { // probar con ===
+            console.log('Las variables son iguales')
+        }
+        else {
+            console.log('Las variables NO son iguales')
+        };
+
+        // -------------------------------//
+
+        var varX; 
+        var varY = 1; // probar tambien con 0 y '0' 
+
+        if (varX) {
+            console.log('varX existe')
+        } else {
+            console.log('varX No existe')
+        };
+
+        if (varY) {
+            console.log('varY existe')
+        } else {
+            console.log('varY No existe')
+        };
+
+        // ------
+
+        var numero = 1;
+        console.log(typeof numero);
+
+        // ------
+
+        var xxx = 132;
+        var yyy = '132';
+
+        if (xxx === yyy) {
+            console.log('son identicos' + (typeof xxx) + ' ' + (typeof yyy))
+        } else {
+            console.log('No son identicos porque ' + (typeof xxx) + ' ' + (typeof yyy))
+        };
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

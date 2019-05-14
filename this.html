@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This JS</title>
+    <script>
+    
+    // var obj1 = {
+    //     var: 'hola',
+    //     printVal: function(){
+    //         console.log(this.val);
+    //     }
+    // };
+
+    // var obj2 = {
+    //     val: 'whats up'
+    // };
+
+    // obj2.printVal = obj1.printVal;
+    // obj1.printVal();
+
+    let o = {
+        carId: 123,
+        getId: function(){
+            return this.carId;
+        }
+    };
+
+    let newCar = {carId: 456};
+
+    console.log( o.getId() ); // 123
+    console.log( o.getId.call(newCar) ); //   456
+
+    //---- BIND ----//
+
+    let oo = {
+        valor: 888,
+        getId: function(){
+            return this.valor;
+        }
+    };
+
+    let newValor = {valor: 999};
+    let newFn = oo.getId.bind(newValor);
+
+    console.log( newFn() ); // 123
+    
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

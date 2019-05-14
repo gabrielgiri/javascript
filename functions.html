@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Functions JS</title>
+    <script>
+
+        myFunction()
+
+        function myFunction() {
+            console.log('hola amigos');
+        }
+
+   //-------------//
+
+    function arrancar(id) {
+        let message = "Estamos arrancando!!";
+        let arrancarFn = function moverLlave() {
+            let message = "Sobreescrito";
+        }
+        arrancarFn();
+        console.log(message);
+    }
+    arrancar(123);
+  
+//-------------//
+        function startCar(CarId) {
+            let message="Starting ...";
+            let startFn = function turnKey() {
+                console.log(message); // Starting...
+            };
+            startFn();
+        }
+
+        startCar(123);
+
+//-------------//
+
+
+
+let messageLet = 'outside';
+if (5===5) {
+    let messageLet = 'equal';
+    console.log(messageLet);// equal
+}
+    console.log(messageLet); // outside
+
+var messageVar = 'outside';
+if (5===5) {
+    var messageVar = 'equal';
+    console.log(messageVar); // equal
+}
+    console.log(messageVar); // equal
+
+//---- IIFE's ----//
+// Immedialety Invoked Function Expression //
+
+(function () {
+    console.log('in function');
+})();
+
+//---- Arrow Functions ----//
+
+let getId = () => 2019;
+console.log(getId()); // 2019 
+
+let getId2 = (prefix, suffix) => prefix + 23344054 + suffix;
+console.log(getId2('DNI: ', ':argentino')); // DNI:23344054:argentino 
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

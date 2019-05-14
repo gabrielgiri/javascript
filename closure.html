@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Closure JS</title>
+    <script>
+
+        function holamundo(nombre) {
+            var saludo = function () {
+                //nombre = 'Alejandro';
+                return 'Hola ' + nombre;
+            }
+            return saludo();
+        }
+
+        console.log(holamundo('Gabriel'));
+
+        //-------------------------//
+        var globalVar = "xyz";
+
+        (function outerFunc(outerArg) {
+            var outerVar = 'soy A';
+
+            (function innerFunc(innerArg) {
+                var innerVar = 'soy B';
+
+                console.log(
+                    "outerArg = " + outerArg + "\n" +
+                    "innerArg = " + innerArg + "\n" +
+                    "outerVar = " + outerVar + "\n" +
+                    "innerVar = " + innerVar + "\n" +
+                    "globalVar = " + globalVar);
+
+            })('soy Inner');
+        })('Soy outer');
+
+         //-------------------------//
+
+         var scope = 'global';
+
+         var testScope = function(){
+            var scope = 'local';
+            function innerFunction(){
+                return scope;
+            }
+            return innerFunction;
+         }
+        
+         var resultadofunction = testScope();
+         var resultadofinal = resultadofunction();
+         console.log (resultadofinal);
+
+         //-------------------------//
+
+         var u = 50;
+         var someFunction = function() {
+            var i = 100
+            return (u + i);
+        }
+
+        console.log(someFunction());
+
+
+        //---------------//
+
+        let app = (function(){
+            let carId = 7788;
+            let getId = function(){
+                return carId;
+            };
+            return {
+                getId: getId
+            };
+        })();
+
+        console.log( app.getId() );
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

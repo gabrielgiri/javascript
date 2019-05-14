@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>typeOf</title>
+    <script>
+
+        console.log(typeof(1)); // number
+        console.log(typeof(true)); // boolean
+        console.log(typeof('Hello')); // string
+        console.log(typeof(function(){})); // function
+        console.log(typeof({})); // object
+        console.log(typeof( null )); // object
+        console.log(typeof( undefined )); // undefined
+        console.log(typeof( NaN )); // number
+
+        //---- Common type conversions ----//
+
+        console.log(Number.parseInt('55'));
+        console.log(typeof(Number.parseInt('55')));
+
+        console.log(Number.parseInt('66ABC'));
+        console.log(typeof(Number.parseInt('66ANC')));
+
+        console.log(Number.parseFloat('77.88HOLA1'));
+        console.log(typeof(Number.parseFloat('77.88HOLA1')));
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
