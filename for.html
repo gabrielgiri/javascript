@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>For JS</title>
+    <script>
+   
+        var itemCount1 = 3;
+
+        for (var i=0; i < itemCount1; i++)
+        console.log(i);
+
+        //--------------//
+
+        var itemCount2 = 15;
+        t=10;
+
+        for (; t < itemCount2; t++)
+        console.log(t);
+
+        //--------------//
+
+        var itemCount3 = 5;
+        z=0;
+
+        for (; z < itemCount3;){
+            console.log(z++);
+            if (z==2)
+            break;
+        }
+
+        //--------------//
+
+        var itemCount3 = 5;
+        z=0;
+
+        for (; z < itemCount3; z++){
+            
+        if (z==2)
+            continue;
+        console.log(z);
+        }
+
+        //--------------//
+
+        var lineItem = {
+            product: "Samsung s9",
+            quantity: 4,
+            brand: "Samsung",
+            price: 459.90
+        };
+
+        for (var field in lineItem) {
+            console.log(field + ': '+ lineItem[field]);
+        }
+        console.log(Object.keys(lineItem).length);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

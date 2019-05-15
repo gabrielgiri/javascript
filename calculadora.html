@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+    <script>
+
+    var valor1 = prompt('Primer Numero');
+    var valor2 = prompt('Segundo Numero');
+    var operacion = prompt('que operacion?');
+     function suma (n1, n2) {
+         return parseInt(n1) + parseInt(n2);
+     }
+
+     function resta (n1, n2) {
+        return parseInt(n1) - parseInt(n2);
+     }
+
+     function multiplicacion (n1, n2) {
+        return parseInt(n1) * parseInt(n2);
+     }
+
+     function diviosion (n1, n2) {
+        return parseInt(n1) / parseInt(n2);
+     }
+
+     if (operacion=='suma'){
+         console.log(suma(valor1,valor2));
+     } else if (operacion=='resta'){
+        console.log(resta(valor1,valor2));
+     } else if (operacion=='multiplicacion'){
+        console.log(multiplicacion(valor1,valor2)); 
+     } else if (operacion=='division'){
+     console.log(division(valor1,valor2)); 
+     } else {
+         console.log('la operacion' + operacion + 'no esta permidita')
+     }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
