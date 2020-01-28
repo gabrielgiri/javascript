@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ 
     <title>typeOf</title>
     <script>
 
-        console.log(typeof(1)); // number
-        console.log(typeof(true)); // boolean
-        console.log(typeof('Hello')); // string
-        console.log(typeof(function(){})); // function
+        console.log(1, typeof(1)); // number
+        console.log(true, typeof(true)); // boolean
+        console.log('Hello', typeof('Hello')); // string
+        console.log((function(){}), typeof(function(){})); // function
         console.log(typeof({})); // object
         console.log(typeof( null )); // object
         console.log(typeof( undefined )); // undefined
-        console.log(typeof( NaN )); // number
+        console.log(NaN, typeof( NaN )); // number
 
         //---- Common type conversions ----//
-
+        console.log('----------');
         console.log(Number.parseInt('55'));
+        console.log(Number.parseInt('55.41'));
         console.log(typeof(Number.parseInt('55')));
 
         console.log(Number.parseInt('66ABC'));
@@ -29,7 +32,12 @@
     
     </script>
 </head>
-<body>
-    
+<body class="p-5">
+
+    <h1>typeOf</h1>
+    <h3>JAVASCRIPT</h3>
+    <hr>
+
 </body>
+
 </html>

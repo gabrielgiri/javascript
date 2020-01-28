@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Map JS</title>
+    <script>
+
+        
+    // MAP
+
+    const map = new Map();
+
+    map.set(1,2);
+    map.set(1980, 1986);
+    map.set("Ciudad", "Barcelona"); // se pisa con sevilla
+    map.set("Ciudad", "Madrid"); // se pisa con sevilla
+    map.set("Ciudad", "Sevilla");
+    map.set("Pais", "España");
+    map.set("nombre", "Gabriel");
+    map.set("nombre", "Gabriel"); // notese que no se repite
+
+    const elementos = map.entries();
+
+    console.log(map); 
+    console.log(elementos); 
+                    
+    map.delete("nombre");
+    console.log(elementos); 
+
+    map.forEach(elemento => {
+        console.log(elemento)
+    });
+
+    map.clear();
+    console.log(elementos); 
+                    
+    </script>
+</head>
+
+<body class="p-5">
+
+<h1>MAP</h1>
+<h3>JAVASCRIPT</h3>
+<hr>
+<p>Se usa para una coleccion donde los elementos no se pueden repetir y la busqueda debe ser eficiente</p>
+<pre>
+    <code>
+        const map = new Map();
+
+        map.set(1,2);
+        map.set(1980, 1986);
+        map.set("Ciudad", "Barcelona"); // se pisa con sevilla
+        map.set("Ciudad", "Madrid"); // se pisa con sevilla
+        map.set("Ciudad", "Sevilla");
+        map.set("Pais", "España");
+        map.set("nombre", "Gabriel");
+        map.set("nombre", "Gabriel"); // notese que no se repite
+    
+        const elementos = map.entries();
+    
+        console.log(map); 
+        console.log(elementos); 
+                        
+        map.delete("nombre");
+        console.log(elementos); 
+    
+        map.forEach(elemento => {
+            console.log(elemento)
+        });
+    
+        map.clear();
+        console.log(elementos); 
+    </code>
+</pre>
+</body>
+
+</html>

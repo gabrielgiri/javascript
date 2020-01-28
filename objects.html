@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ 
     <title>Objects JS</title>
     <script>
 
@@ -43,12 +45,42 @@
              let automovil = new Automovil(1973);
              console.log(automovil.automovilId);
 
+             
+             //------ Constructor Avanzado -----//
+
+             function Pais(nombre, superficie, presidente) {
+             this.nombre = nombre;
+             this.superficie = superficie;
+             this.presidente = presidente;
+            }
+
+            pais1 = new Pais ("Argentina", 2780400, "Fernandez");
+            pais2 = new Pais ("Paraguay", 406752, "Benítez");
+            pais3 = new Pais ("Chile", 756096, "Piñera");
+            pais4 = new Pais ("Brasil", 8515767, "Bolsonaro");
+
+            console.log(pais1);
+            
+            console.log(pais2);
+            
+            console.log(pais3);
+            console.log(pais4);
+
     </script>
 </head>
 
-<body>
+<body class="p-5">
 
-
-</body>
+    <h1>OBJECTS</h1>
+    <h3>JAVASCRIPT</h3>
+    <P>Se puede definir como una variable que tiene super atributos</P>
+    <hr>
+    <p></p>
+    <pre>
+        <code>
+   
+        </code>
+    </pre>
+    </body>
 
 </html>

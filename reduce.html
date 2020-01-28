@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Reduce JS</title>
+    <script>
+
+        var letras = ["H","o","l","a"];
+        console.log(letras);
+
+        var palabra = letras.reduce(function(valor_anterior, valor_actual, index, arreglo){
+            return valor_anterior + valor_actual;
+        });
+
+        console.log(palabra);
+
+        var numeros = [4,5,7,8,48,53,63];
+        console.log(numeros);
+
+        var suma = numeros.reduce(function(valor_anterior, valor_actual, index, arreglo){
+            return valor_anterior + valor_actual;
+        });
+
+        console.log(suma);
+                
+    </script>
+</head>
+
+<body class="p-5">
+
+<h1>REDUCE</h1>
+<h3>JAVASCRIPT</h3>
+<hr>
+<p></p>
+<pre>
+    <code>
+        var letras = ["H","o","l","a"];
+        console.log(letras);
+
+        var palabra = letras.reduce(function(valor_anterior, valor_actual, index, arreglo){
+            return valor_anterior + valor_actual;
+        });
+
+        console.log(palabra);
+
+        var numeros = [4,5,7,8,48,53,63];
+        console.log(numeros);
+
+        var suma = numeros.reduce(function(valor_anterior, valor_actual, index, arreglo){
+            return valor_anterior + valor_actual;
+        });
+
+        console.log(suma);
+    </code>
+</pre>
+</body>
+
+</html>

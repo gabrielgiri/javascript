@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ 
+    <title>Filter JS</title>
+
+
+</head>
+
+<body class="p-5">
+
+    <h1>FILTER</h1>
+    <h3>JAVASCRIPT</h3>
+    <hr>
+        <pre> 
+            <code>
+                var numeros = [4,17,24,34,45,56,61,63,72,80,96,103,106];
+
+                var numeros_pares = numeros.filter(function(numero) {
+                    return numero % 2 == 0;
+                })
+            
+                var numeros_tres_digitos = numeros.filter(function(numero) {
+                    return numero > 99;
+                })
+            
+                console.log (numeros_pares);
+                console.log (numeros_tres_digitos);
+            </code>
+        </pre>
+
+    <script>
+
+    var numeros = [4,17,24,34,45,56,61,63,72,80,96,103,106];
+
+    var numeros_pares = numeros.filter(function(numero) {
+        return numero % 2 == 0;
+    })
+
+    var numeros_tres_digitos = numeros.filter(function(numero) {
+        return numero > 99;
+    })
+
+    console.log (numeros_pares);
+    console.log (numeros_tres_digitos);
+
+    </script>
+
+</body>
+
+</html>
