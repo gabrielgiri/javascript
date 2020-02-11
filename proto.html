@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ 
+    <title>Proto JS</title>
+    <script>
+
+        var Auto = {
+        marca: 'Ford',
+        color: 'Rojo',
+        modelo: 2014,
+        /*mensaje: function() {
+            console.log('Esto es un auto');
+        }*/
+    }
+
+    Auto.__proto__.mensaje = function () {
+        console.log('Esto es un auto pero desde .__proto__');
+    }
+
+    Auto.mensaje();
+
+
+    /* Segundo ejemplo */
+
+    var myObjectNumber = {
+        getNumber: function() {
+            return this.number;
+        }
+    }
+
+    var a = {
+        number: 22,
+        __proto__: myObjectNumber
+    }
+
+    var b = {
+        number: 50,
+        __proto__: myObjectNumber
+    }
+
+
+/* Otro Ejemplo */
+
+function Persona (fname, lname, year){
+    this.firstName = fname;
+    this.lastName = lname;
+    this.year = year;
+
+    this.fullName = function() {
+        return this.firstName + ' ' + this.lastName;
+    }
+}
+
+var ruben = new Persona ('Marco','Ruben','1988')
+var palma = new Persona ('Omar','Palma','1963')
+
+
+/* Añadir propiedad a un objeto */
+ruben.nacionalidad = "Argentina";
+
+/* Añadir metodo a un objeto */
+ruben.nacimiento = function(){
+    return "Nacido en el año " + this.year;
+}
+
+console.log (ruben.nacionalidad);
+console.log (ruben.nacimiento());
+
+    </script>
+</head>
+
+<body class="p-5">
+
+    <h1>PROTO</h1>
+    <h3>JAVASCRIPT</h3>
+    <hr>
+<pre>
+    <code>
+        {number: 22}
+number: 22
+__proto__:
+getNumber: ƒ ()
+length: 0
+name: "getNumber"
+arguments: null
+caller: null
+prototype: {constructor: ƒ}
+__proto__: ƒ ()
+[[FunctionLocation]]: proto.html:32
+[[Scopes]]: Scopes[1]
+__proto__: Object
+    </code>
+</pre>
+</body>
+
+</html>
