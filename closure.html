@@ -10,9 +10,16 @@
     <title>Closure JS</title>
     <script>
 
+        const saludar = function(nombre) {
+            console.log('Hola ' + nombre);
+        }
+
+        saludar();          // Hola undefined
+        saludar('Gabriel'); // Hola Gabriel
+
         function holamundo(nombre) {
             var saludo = function () {
-                //nombre = 'Alejandro';
+                nombre = 'Alejandro';
                 return 'Hola ' + nombre;
             }
             return saludo();
@@ -87,80 +94,91 @@
 
     <h1>CLOSURE</h1>
     <h3>JAVASCRIPT</h3>
-    <P>Es un patron donde podemos declarar funciones dentro de otras funciones</P>
+    <p>Es un patron donde podemos declarar funciones dentro de otras funciones</p>
+    <a href="index.html" class="btn btn-primary" role="button" >Volver al menu</a>
     <hr>
     <p></p>
     <pre>
         <code>
-            function holamundo(nombre) {
-                var saludo = function () {
-                    //nombre = 'Alejandro';
-                    return 'Hola ' + nombre;
-                }
-                return saludo();
-            }
-    
-            console.log(holamundo('Gabriel'));
-    
-            //-------------------------//
-            var globalVar = "xyz";
-    
-            (function outerFunc(outerArg) {
-                var outerVar = 'soy A';
-    
-                (function innerFunc(innerArg) {
-                    var innerVar = 'soy B';
-    
-                    console.log(
-                        "outerArg = " + outerArg + "\n" +
-                        "innerArg = " + innerArg + "\n" +
-                        "outerVar = " + outerVar + "\n" +
-                        "innerVar = " + innerVar + "\n" +
-                        "globalVar = " + globalVar);
-    
-                })('soy Inner');
-            })('Soy outer');
-    
-             //-------------------------//
-    
-             var scope = 'global';
-    
-             var testScope = function(){
-                var scope = 'local';
-                function innerFunction(){
-                    return scope;
-                }
-                return innerFunction;
-             }
-            
-             var resultadofunction = testScope();
-             var resultadofinal = resultadofunction();
-             console.log (resultadofinal);
-    
-             //-------------------------//
-    
-             var u = 50;
-             var someFunction = function() {
-                var i = 100
-                return (u + i);
-            }
-    
-            console.log(someFunction());
-    
-    
-            //---------------//
-    
-            let app = (function(){
-                let carId = 7788;
-                let getId = function(){
-                    return carId;
-                };
-                return {
-                    getId: getId
-                };
-            })();
-    
-            console.log( app.getId() );
+
+const saludar = function(nombre) {
+    console.log('Hola ' + nombre);
+}
+
+saludar();              // Hola undefined
+saludar('Gabriel');     // Hola Gabriel
+
+//-------------------------//
+
+function holamundo(nombre) {
+    var saludo = function () {
+        //nombre = 'Alejandro';
+        return 'Hola ' + nombre;
+    }
+    return saludo();
+}
+
+console.log(holamundo('Gabriel'));
+
+//-------------------------//
+var globalVar = "xyz";
+
+(function outerFunc(outerArg) {
+    var outerVar = 'soy A';
+
+    (function innerFunc(innerArg) {
+        var innerVar = 'soy B';
+
+        console.log(
+            "outerArg = " + outerArg + "\n" +
+            "innerArg = " + innerArg + "\n" +
+            "outerVar = " + outerVar + "\n" +
+            "innerVar = " + innerVar + "\n" +
+            "globalVar = " + globalVar);
+
+    })('soy Inner');
+})('Soy outer');
+
+    //-------------------------//
+
+    var scope = 'global';
+
+    var testScope = function(){
+    var scope = 'local';
+    function innerFunction(){
+        return scope;
+    }
+    return innerFunction;
+    }
+
+    var resultadofunction = testScope();
+    var resultadofinal = resultadofunction();
+    console.log (resultadofinal);
+
+    //-------------------------//
+
+    var u = 50;
+    var someFunction = function() {
+    var i = 100
+    return (u + i);
+}
+
+console.log(someFunction());
+
+
+//---------------//
+
+let app = (function(){
+    let carId = 7788;
+    let getId = function(){
+        return carId;
+    };
+    return {
+        getId: getId
+    };
+})();
+
+console.log( app.getId() );
         </code>
     </pre>
     </body>
