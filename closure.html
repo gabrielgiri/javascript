@@ -10,12 +10,12 @@
     <title>Closure JS</title>
     <script>
 
-        const saludar = function(nombre) {
-            console.log('Hola ' + nombre);
+        const saludar = function(name) {
+            console.log('Hello ' + name);
         }
 
-        saludar();          // Hola undefined
-        saludar('Gabriel'); // Hola Gabriel
+        saludar();          // Hello undefined
+        saludar('Gabriel'); // Hello Gabriel
 
         function holamundo(nombre) {
             var saludo = function () {
@@ -25,7 +25,7 @@
             return saludo();
         }
 
-        console.log(holamundo('Gabriel'));
+        console.log(holamundo('Gabriel')); // Hola Alejandro
 
         //-------------------------//
         var globalVar = "xyz";
@@ -94,7 +94,11 @@
 
     <h1>CLOSURE</h1>
     <h3>JAVASCRIPT</h3>
-    <p>Es un patron donde podemos declarar funciones dentro de otras funciones</p>
+    <div class="bg-primary p-3 text-light fs-1">
+    <p class="fs-1">Es un patron donde podemos declarar funciones dentro de otras funciones</p>
+</div>
+
+
     <a href="index.html" class="btn btn-primary" role="button" >Volver al menu</a>
     <hr>
     <p></p>

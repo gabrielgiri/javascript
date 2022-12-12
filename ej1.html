@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">Hola Cybernauta!</p>
+    <p id="p2">Hola Cybernauta!</p>
+
+    <script>
+
+var edad = prompt("Introduce tu edad");
+var nota = prompt("Introduce la nota");
+
+if (Number(edad) == edad) {
+
+	if (edad > 18) {
+
+		document.write("Podes tomar cerveza");
+        document.getElementById("p1").innerHTML = "Podes tomar cerveza";
+        } else {
+	
+    
+    document.getElementById("p1").innerHTML = "sos muy chico para beber";
+        }
+	}
+
+
+
+    if (Number(nota) == nota) {
+        if (nota > 10 || nota < 0) {
+            document.getElementById("p2").innerHTML = "ERROR";
+    } else if (nota > 8) {
+        document.getElementById("p2").innerHTML = "SOBRESALIENTE";
+    } else if (nota > 6) {
+        document.getElementById("p2").innerHTML = "APROBASTE";
+    } 
+    else if (nota > 4) {
+        document.getElementById("p2").innerHTML = "FLOJO";
+    } else if (nota > 0) {
+        document.getElementById("p2").innerHTML = "Sacaste un " + nota + ". Sos un desastre";
+    } 
+    }
+
+    </script>
+</body>
+</html>

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <title>Hoisting JS</title>
     <script>
 
@@ -23,9 +25,9 @@
 
 //--------------------
 
-console.log('Nueva variable: ' + nuevaVariable);
-var nuevaVariable = "Gabriel";
-console.log('Nueva variable: ' + nuevaVariable);
+console.log('New Name: ' + newName); // undefined
+var newName = "Gabriel";
+console.log('New Name: ' + newName); // Gabriel
 
 //--------------------//
 
@@ -48,17 +50,45 @@ console.log(total); // Nan
 
 //--------------------//
 
+//showProduct(); // showProduct is not a function
 var showProduct = function(){
-    console.log('mostrando un producto');
+    console.log('1) Algo de Hoisting');
 }
 
-showProduct();
+showProduct(); // 1) Algo de Hoisting
+
+
+//--------------------//
+
+showProduct2(); // 2) Algo de Hoisting
+ function showProduct2(){
+    console.log('2) Algo de Hoisting');
+}
+
+showProduct2(); // 2) Algo de Hoisting
 
 
 
     </script>
 </head>
-<body>
+<body class="p-5">
+
+    <h1>Hoisting</h1>
+    <h3>JAVASCRIPT</h3>
+
+    <a href="index.html" class="btn btn-primary" role="button">Volver al menu</a>
+    <hr>
+    <p>Las funciones se elevan</p>
+    <p>Variables VAR: Solo declaracion pero no la iniciacion</p>
+    <p>Variables CONST: No hace hoisting</p>
+    <pre>
+        <code>
+console.log('New Name: ' + newName); // undefined
+var newName = "Gabriel";
+console.log('New Name: ' + newName); // Gabriel
     
+</code>
+</pre>
+
 </body>
 </html>

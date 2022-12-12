@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Exercise fizzbuzz</title>
+    <script>
+        for (let x = 0; x < 100; x++) {
+            console.log(x);
+            if (((x % 3) == 0) && ((x % 5) == 0)) {
+                console.log('fizzbuzz');
+            } else if ((x % 3) == 0) {
+                console.log('fizz');
+            } else if ((x % 5) == 0) {
+                console.log('buzz');
+            }
+        }
+    </script>
+
+    <style>
+        .square {
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            float: left;
+        }
+        
+        .circle {
+            background-color: blue;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            position: relative;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+
+<body class="p-5">
+
+    <h1>Exercise fizzbuzz</h1>
+    <h3>JAVASCRIPT</h3>
+
+    <a href="index.html" class="btn btn-primary" role="button">Volver al menu</a>
+    <hr>
+    <p></p>
+    <pre>
+        <code>
+for (let x = 0; x < 100; x++) {
+    console.log(x);
+    if (((x % 3) == 0) && ((x % 5) == 0)) {
+        console.log('fizzbuzz');
+    } else if ((x % 3) == 0) {
+        console.log('fizz');
+    } else if ((x % 5) == 0) {
+        console.log('buzz');
+    }
+}
+        </code>
+    </pre>
+
+    <div class="square">
+        <div class="circle"></div>
+    </div>
+
+    <div class="square">
+        <div class="circle"></div>
+    </div>
+
+    <div class="square">
+        <div class="circle"></div>
+    </div>
+
+</body>
+
+</html>

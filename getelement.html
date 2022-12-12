@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>For JS</title>
+   
+
+    <style>
+    
+    body {
+        padding: 20px;
+    }
+
+    p {
+        padding: 20px;
+        background-color: antiquewhite;
+        border: solid 1px gray;
+        font-size: 18px;
+        transition: all .5s;
+    }
+    button {
+        padding: 10px;
+        margin: 5px;
+    }
+
+
+    #parrafo-oculto {
+        display: none;
+
+    }
+    </style>
+</head>
+<body>
+    <h1 id="title">Training JavaScript</h1>
+    <P id="parrafo">Texto original</P>
+    <P id="parrafo-oculto">Esto es un parrafo oculto</P>
+    <button id="ok-button">Click Here</button></br>
+    <button id="ok-red">Red</button>
+    <button id="ok-blue">Blue</button>
+    <button id="ok-green">Green</button></br>
+    <button id="ok-mostrar">Mostrar</button>
+
+    <script>
+   
+        let vTitle = document.getElementById('title');
+        let vParrafo = document.getElementById('parrafo');
+        let vParrafoOculto = document.getElementById('parrafo-oculto');
+        let okButton = document.getElementById('ok-button');
+        let okRed = document.getElementById('ok-red');
+        let okBlue = document.getElementById('ok-blue');
+        let okGreen = document.getElementById('ok-green');
+        let okMostrar = document.getElementById('ok-mostrar');
+
+
+    setTimeout(function(){
+        vTitle.innerText="Cabiando el titulo";
+        vParrafo.innerText="Hola mundo";
+    }, 1000);
+
+
+    setTimeout(function(){
+        vTitle.innerText="Cambiando el mundo";
+        variable.innerText="Estoy cambiando de texto de nuevo";
+    }, 2000);
+
+        
+        okButton.addEventListener('click', function() {
+            vParrafo.innerText = 'Button Clicked';
+        });
+
+                
+        okBlue.addEventListener('click', function() {
+            vParrafo.style.backgroundColor = 'lightskyblue';
+        });
+
+        okGreen.addEventListener('click', function() {
+            vParrafo.style.backgroundColor = 'seagreen';
+            vParrafo.style.color = 'white';
+        });
+
+        okRed.addEventListener('click', function() {
+            vParrafo.style.backgroundColor = 'palevioletred';
+        });
+
+        okMostrar.addEventListener('click', function() {
+            if (vParrafoOculto.style.display = 'none') {
+            vParrafoOculto.style.display = 'block';
+            okMostrar.innerHTML="ocultar";
+            console.log (vParrafoOculto);
+            
+        } else {
+            vParrafoOculto.style.display = 'none';
+            okMostrar.innerHTML="mostrar";
+        }
+
+
+
+        });
+
+    </script>
+
+</body>
+</html>

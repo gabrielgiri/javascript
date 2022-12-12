@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Exercise 2</title>
+    <script>
+        let x = {
+            a: 1,
+            b: 2
+        }
+
+        console.log(x);
+
+        let newArray = Object.values(x);
+        console.log(newArray);
+        /*---------*/
+
+        let h = "Hello";
+        let o = "olleh";
+
+        console.log(h);
+
+        function reverseString(str) {
+            return str.split("").reverse().join("");
+        }
+
+        console.log(reverseString(o));
+
+        /*-----------*/
+        1
+        let obj = {
+            u: 1,
+            t: 2,
+            getU() {
+                console.log(this.u);
+                return this;
+            },
+            getT() {
+                console.log(this.u);
+            }
+        };
+
+        obj.getU().getT()
+    </script>
+
+
+
+</head>
+
+<body class="p-5">
+
+    <h1>Exercise 2</h1>
+    <h3>JAVASCRIPT</h3>
+
+    <a href="index.html" class="btn btn-primary" role="button">Volver al menu</a>
+    <hr>
+    <p></p>
+    <pre>
+        <code>
+let x = {
+    a: 1,
+    b: 2
+}
+
+console.log(x);
+
+let newArray = Object.values(x);
+console.log(newArray);
+/*---------*/
+
+let h = "Hello";
+let o = "olleh";
+
+console.log(h);
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+
+console.log(reverseString(o));
+
+/*-----------*/
+1
+let obj = {
+    u: 1,
+    t: 2,
+    getU() {
+        console.log(this.u);
+        return this;
+    },
+    getT() {
+        console.log(this.u);
+    }
+};
+
+obj.getU().getT()
+        </code>
+    </pre>
+
+
+
+</body>
+
+</html>
