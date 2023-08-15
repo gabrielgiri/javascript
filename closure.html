@@ -1,152 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-   
     <title>Closure JS</title>
+
     <script>
+      const saludar = function (name) {
+        console.log("Hello " + name);
+      };
 
-        const saludar = function(name) {
-            console.log('Hello ' + name);
+      saludar(); // Hello undefined
+      saludar("Gabriel"); // Hello Gabriel
+
+      function holamundo(nombre) {
+        var saludo = function () {
+          nombre = "Alejandro";
+          return "Hola " + nombre;
+        };
+        return saludo();
+      }
+
+      console.log(holamundo("Gabriel")); // Hola Alejandro
+
+      //-------------------------//
+      var globalVar = "xyz";
+
+      (function outerFunc(outerArg) {
+        var outerVar = "soy A";
+
+        (function innerFunc(innerArg) {
+          var innerVar = "soy B";
+
+          console.log(
+            "outerArg = " +
+              outerArg +
+              "\n" +
+              "innerArg = " +
+              innerArg +
+              "\n" +
+              "outerVar = " +
+              outerVar +
+              "\n" +
+              "innerVar = " +
+              innerVar +
+              "\n" +
+              "globalVar = " +
+              globalVar
+          );
+        })("soy Inner");
+      })("Soy outer");
+
+      //-------------------------//
+
+      var scope = "global";
+
+      var testScope = function () {
+        var scope = "local";
+        function innerFunction() {
+          return scope;
         }
+        return innerFunction;
+      };
 
-        saludar();          // Hello undefined
-        saludar('Gabriel'); // Hello Gabriel
+      var resultadofunction = testScope();
+      var resultadofinal = resultadofunction();
+      console.log(resultadofinal);
 
-        function holamundo(nombre) {
-            var saludo = function () {
-                nombre = 'Alejandro';
-                return 'Hola ' + nombre;
-            }
-            return saludo();
-        }
+      //-------------------------//
 
-        console.log(holamundo('Gabriel')); // Hola Alejandro
+      var u = 50;
+      var someFunction = function () {
+        var i = 100;
+        return u + i;
+      };
 
-        //-------------------------//
-        var globalVar = "xyz";
+      console.log(someFunction());
 
-        (function outerFunc(outerArg) {
-            var outerVar = 'soy A';
+      //---------------//
 
-            (function innerFunc(innerArg) {
-                var innerVar = 'soy B';
+      let app = (function () {
+        let carId = 7788;
+        let getId = function () {
+          return carId;
+        };
+        return {
+          getId: getId,
+        };
+      })();
 
-                console.log(
-                    "outerArg = " + outerArg + "\n" +
-                    "innerArg = " + innerArg + "\n" +
-                    "outerVar = " + outerVar + "\n" +
-                    "innerVar = " + innerVar + "\n" +
-                    "globalVar = " + globalVar);
-
-            })('soy Inner');
-        })('Soy outer');
-
-         //-------------------------//
-
-         var scope = 'global';
-
-         var testScope = function(){
-            var scope = 'local';
-            function innerFunction(){
-                return scope;
-            }
-            return innerFunction;
-         }
-        
-         var resultadofunction = testScope();
-         var resultadofinal = resultadofunction();
-         console.log (resultadofinal);
-
-         //-------------------------//
-
-         var u = 50;
-         var someFunction = function() {
-            var i = 100
-            return (u + i);
-        }
-
-        console.log(someFunction());
-
-
-        //---------------//
-
-        let app = (function(){
-            let carId = 7788;
-            let getId = function(){
-                return carId;
-            };
-            return {
-                getId: getId
-            };
-        })();
-
-        console.log( app.getId() );
-
+      console.log(app.getId());
     </script>
-</head>
+  </head>
 
-<body class="p-5">
-
+  <body class="p-5">
     <h1>CLOSURE</h1>
     <h3>JAVASCRIPT</h3>
-    <div class="bg-primary p-3 text-light fs-1">
-    <p class="fs-1">Es un patron donde podemos declarar funciones dentro de otras funciones</p>
-</div>
+    
+      <p>
+        Es un patron donde podemos declarar funciones dentro de otras funciones
+      </p>
+   
 
-
-    <a href="index.html" class="btn btn-primary" role="button" >Volver al menu</a>
-    <hr>
-    <p></p>
+    <a href="index.html" class="btn btn-primary" role="button"
+      >Volver al menu</a>
+    <hr />
+    
     <pre>
         <code>
-
-const saludar = function(nombre) {
-    console.log('Hola ' + nombre);
-}
-
-saludar();              // Hola undefined
-saludar('Gabriel');     // Hola Gabriel
-
-//-------------------------//
-
-function holamundo(nombre) {
-    var saludo = function () {
-        //nombre = 'Alejandro';
-        return 'Hola ' + nombre;
+    const saludar = function(nombre) {
+        console.log('Hola ' + nombre);
     }
-    return saludo();
-}
 
-console.log(holamundo('Gabriel'));
+    saludar();              // Hola undefined
+    saludar('Gabriel');     // Hola Gabriel
+</code>
+</pre>
+    <pre>
+<code>
+    function holamundo(nombre) {
+        var saludo = function () {
+            //nombre = 'Alejandro';
+            return 'Hola ' + nombre;
+        }
+        return saludo();
+    }
 
-//-------------------------//
-var globalVar = "xyz";
+    console.log(holamundo('Gabriel'));
+</code>
+</pre>
+    <pre>
+<code>
+    var globalVar = "xyz";
 
-(function outerFunc(outerArg) {
-    var outerVar = 'soy A';
+    (function outerFunc(outerArg) {
+        var outerVar = 'soy A';
 
-    (function innerFunc(innerArg) {
-        var innerVar = 'soy B';
+        (function innerFunc(innerArg) {
+            var innerVar = 'soy B';
 
-        console.log(
-            "outerArg = " + outerArg + "\n" +
-            "innerArg = " + innerArg + "\n" +
-            "outerVar = " + outerVar + "\n" +
-            "innerVar = " + innerVar + "\n" +
-            "globalVar = " + globalVar);
+            console.log(
+                "outerArg = " + outerArg + "\n" +
+                "innerArg = " + innerArg + "\n" +
+                "outerVar = " + outerVar + "\n" +
+                "innerVar = " + innerVar + "\n" +
+                "globalVar = " + globalVar);
 
-    })('soy Inner');
-})('Soy outer');
-
-    //-------------------------//
-
+        })('soy Inner');
+    })('Soy outer');
+</code>
+</pre>
+    <pre>
+<code>
     var scope = 'global';
-
     var testScope = function(){
     var scope = 'local';
     function innerFunction(){
@@ -158,9 +173,10 @@ var globalVar = "xyz";
     var resultadofunction = testScope();
     var resultadofinal = resultadofunction();
     console.log (resultadofinal);
-
-    //-------------------------//
-
+</code>
+</pre>
+    <pre>
+<code>
     var u = 50;
     var someFunction = function() {
     var i = 100
@@ -168,23 +184,22 @@ var globalVar = "xyz";
 }
 
 console.log(someFunction());
+</code>
+</pre>
+    <pre>
+<code>
+    let app = (function(){
+        let carId = 7788;
+        let getId = function(){
+            return carId;
+        };
+        return {
+            getId: getId
+        };
+    })();
 
-
-//---------------//
-
-let app = (function(){
-    let carId = 7788;
-    let getId = function(){
-        return carId;
-    };
-    return {
-        getId: getId
-    };
-})();
-
-console.log( app.getId() );
+    console.log( app.getId() );
         </code>
     </pre>
-    </body>
-
+  </body>
 </html>
