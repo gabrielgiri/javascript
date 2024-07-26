@@ -4,13 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
 
     <title>Closure JS</title>
 
@@ -84,7 +80,7 @@
         return u + i;
       };
 
-      console.log(someFunction());
+      console.log("someFunction: " + someFunction()); // 150
 
       //---------------//
 
@@ -116,17 +112,27 @@
     <hr />
     
     <pre>
-        <code>
-    const saludar = function(nombre) {
-        console.log('Hola ' + nombre);
-    }
-
-    saludar();              // Hola undefined
-    saludar('Gabriel');     // Hola Gabriel
+      <code class="language-js">
+        const saludar = function (name) {
+          console.log("Hello " + name);
+        };
+  
+        saludar(); // Hello undefined
+        saludar("Gabriel"); // Hello Gabriel
+  
+        function holamundo(nombre) {
+          var saludo = function () {
+            nombre = "Alejandro";
+            return "Hola " + nombre;
+          };
+          return saludo();
+        }
+  
+        console.log(holamundo("Gabriel")); // Hola Alejandro
 </code>
 </pre>
     <pre>
-<code>
+      <code class="language-js">   
     function holamundo(nombre) {
         var saludo = function () {
             //nombre = 'Alejandro';
@@ -139,7 +145,7 @@
 </code>
 </pre>
     <pre>
-<code>
+      <code class="language-js">   
     var globalVar = "xyz";
 
     (function outerFunc(outerArg) {
@@ -160,7 +166,7 @@
 </code>
 </pre>
     <pre>
-<code>
+      <code class="language-js">   
     var scope = 'global';
     var testScope = function(){
     var scope = 'local';
@@ -176,18 +182,18 @@
 </code>
 </pre>
     <pre>
-<code>
-    var u = 50;
-    var someFunction = function() {
-    var i = 100
-    return (u + i);
-}
+      <code class="language-js">   
+  var u = 50;
+  var someFunction = function () {
+    var i = 100;
+    return u + i;
+  };
 
-console.log(someFunction());
+  console.log("someFunction: " + someFunction()); // 150
 </code>
 </pre>
     <pre>
-<code>
+      <code class="language-js">   
     let app = (function(){
         let carId = 7788;
         let getId = function(){
@@ -201,5 +207,7 @@ console.log(someFunction());
     console.log( app.getId() );
         </code>
     </pre>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
   </body>
 </html>

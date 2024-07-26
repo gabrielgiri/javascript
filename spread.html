@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Spread Operator JS</title>
+
+    <script>
+      const numeros = [4,5,6,27,18];
+   let numeroscopiados = [...numeros];
+   numeroscopiados[0] = 464;
+   console.log (numeros);
+      console.log (numeroscopiados);
+
+
+
+      const nombres = ["Juan", "Martin", "Diego", "Gabriel"];
+      const otrosnombres = ["Pedro", "Alejandro", "Ezequiel", "Ignacio"];
+   console.log (...nombres, ...otrosnombres, "Ruben");
+    
+
+
+    </script>
+  </head>
+
+  <body class="p-5">
+    <h1>Spread Operator</h1>
+    <h3>JAVASCRIPT</h3>
+    
+      <p>
+        El spread operator que incorpora ECMAScript 6 en JavaScript es un operador que simplifica la recogida de valores en una estructura de datos. Su representa con tres puntos: ...
+      </p>
+   
+
+    <a href="index.html" class="btn btn-primary" role="button"
+      >Volver al menu</a>
+    <hr />
+    
+    <pre>
+        <code>
+    const numeros = [4,5,6,27,18];
+    let numeroscopiados = [...numeros];
+    numeroscopiados[0] = 464;
+    console.log (numeros);
+    console.log (numeroscopiados);
+
+    const nombres = ["Juan", "Martin", "Diego", "Gabriel"];
+    const otrosnombres = ["Pedro", "Alejandro", "Ezequiel", "Ignacio"];
+    console.log (...nombres, ...otrosnombres, "Ruben");
+</code>
+</pre>
+  </body>
+</html>

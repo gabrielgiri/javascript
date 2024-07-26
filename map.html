@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+    <title>MAP JS</title>  
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +13,6 @@
     <title>Map JS</title>
     <script>
 
-        
     // MAP
 
     const map = new Map();
@@ -47,35 +50,37 @@
 <h3>JAVASCRIPT</h3>
 <hr>
 <p>Se usa para una coleccion donde los elementos no se pueden repetir y la busqueda debe ser eficiente</p>
+<hr>
+<a href="index.html" class="btn btn-primary" role="button">Volver al menu</a>
 <pre>
-    <code>
-        const map = new Map();
+    <code class="language-js">
+    const map = new Map();
+    map.set(1,2);
+    map.set(1980, 1986);
+    map.set("Ciudad", "Barcelona"); // se pisa con sevilla
+    map.set("Ciudad", "Madrid"); // se pisa con sevilla
+    map.set("Ciudad", "Sevilla");
+    map.set("Pais", "España");
+    map.set("nombre", "Gabriel");
+    map.set("nombre", "Gabriel"); // notese que no se repite
 
-        map.set(1,2);
-        map.set(1980, 1986);
-        map.set("Ciudad", "Barcelona"); // se pisa con sevilla
-        map.set("Ciudad", "Madrid"); // se pisa con sevilla
-        map.set("Ciudad", "Sevilla");
-        map.set("Pais", "España");
-        map.set("nombre", "Gabriel");
-        map.set("nombre", "Gabriel"); // notese que no se repite
-    
-        const elementos = map.entries();
-    
-        console.log(map); 
-        console.log(elementos); 
-                        
-        map.delete("nombre");
-        console.log(elementos); 
-    
-        map.forEach(elemento => {
-            console.log(elemento)
-        });
-    
-        map.clear();
-        console.log(elementos); 
+    const elementos = map.entries();
+
+    console.log(map); 
+    console.log(elementos); 
+                    
+    map.delete("nombre");
+    console.log(elementos); 
+
+    map.forEach(elemento => {
+        console.log(elemento)
+    });
+
+    map.clear();
+    console.log(elementos); 
     </code>
 </pre>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
 </body>
 
 </html>
