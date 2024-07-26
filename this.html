@@ -5,23 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="style.css" />
     <title>This JS</title>
     <script>
-    
-    // var obj1 = {
-    //     var: 'hola',
-    //     printVal: function(){
-    //         console.log(this.val);
-    //     }
-    // };
 
-    // var obj2 = {
-    //     val: 'whats up'
-    // };
+const player = {
+    name: "Marco Ruben",
+    text: "EL maximo goleador",
+    club: "Rosario Central",
+    goles: 104,
+    mostrar() {
+        console.log(this);
+    },
+    cambiarTexto(text) {
+        this.text = text;
+    }
+}
+player.mostrar();
 
 
-    // obj2.printVal = obj1.printVal;
-    // obj1.printVal();
+    //----------------//
+        function getName () {
+            console.log(`Mi nombre es: ${globalThis.name}`);
+        }
+
+        globalThis.name = "Gabriel";
+        getName();
 
     let o = {
         carId: 123,
@@ -49,7 +64,6 @@
 
     console.log( newFn() ); // 123
 
-s
     let player1 = {Nombre: "Gabriel"};
     let player2 = {Nombre: "Alejandro"};
     
@@ -61,12 +75,67 @@ s
 
     <h1>THIS</h1>
     <h3>JAVASCRIPT</h3>
-    <P>Una referencia al objeto en que se llama a una funcions</P>
+    <p>Una referencia al objeto en que se llama a una funcions</p>
+    <p>Es una referencia al contexto donde se ejecuta</p>
+    <a href="index.html" class="btn btn-primary" role="button" >Volver al menu</a>
     <hr>
     <p></p>
     <pre>
         <code>
-   
+    name: "Marco Ruben",
+    text: "EL maximo goleador",
+    club: "Rosario Central",
+    goles: 104,
+    mostrar() {
+            console.log(this);
+        },
+        cambiarTexto(text) {
+            this.text = text;
+        }
+    }
+    player.mostrar();
+    </code>
+</pre>    <pre>
+    <code>
+    function getName () {
+        console.log(`Mi nombre es: ${globalThis.name}`);
+    }
+
+    globalThis.name = "Gabriel";
+    getName();
+</code>
+</pre>    <pre>
+    <code>
+    let o = {
+        carId: 123,
+        getId: function(){
+            return this.carId;
+        }
+    };
+
+    let newCar = {carId: 456};
+
+    console.log( o.getId() ); // 123
+    console.log( o.getId.call(newCar) ); //   456
+    </code>
+</pre>    <pre>
+    <code>
+    //---- BIND ----//
+
+    let oo = {
+        valor: 888,
+        getId: function(){
+            return this.valor;
+        }
+    };
+
+    let newValor = {valor: 999};
+    let newFn = oo.getId.bind(newValor);
+
+    console.log( newFn() ); // 123
+
+    let player1 = {Nombre: "Gabriel"};
+    let player2 = {Nombre: "Alejandro"};
         </code>
     </pre>
     </body>

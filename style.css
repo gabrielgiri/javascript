@@ -8,3 +8,10 @@ pre {
   code {
     color: #333;
   }
+
+  .highlight {
+    color: green;
+background: black;
+color: white;
+font-weight: 500;
+}

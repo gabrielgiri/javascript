@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>IF JS</title>
+
+    <script>
+
+        var favoriteBook = [];
+
+         function addFavoriteBook(bookName) {
+          if (bookName.includes('GREAT')) {
+            console.log('+++ ' + bookName +  ' includes GREAT'); 
+            favoriteBook.push(bookName);
+          } else {
+            console.log('--- ' + bookName +  ' not includes GREAT')
+          }
+        }
+console.log(favoriteBook);
+
+    addFavoriteBook('THE GREAT BODY KEEPS THE SCORE');
+    addFavoriteBook('THE RIVER WE REMEMBER');
+    addFavoriteBook('GREAT THINGS WE LEFT BEHIND');
+    addFavoriteBook('FOURTH WING');
+    addFavoriteBook('PAYBACK IN DEATH');
+    addFavoriteBook('WHY WE LOVE GREAT BASEBALL');
+    
+    </script>
+  </head>
+
+  <body class="p-5">
+    <h1>IF</h1>
+    <h3>JAVASCRIPT</h3>
+    
+      <p>
+        Es un patron donde podemos declarar funciones dentro de otras funciones
+      </p>
+   
+
+    <a href="./../index.html" class="btn btn-primary" role="button"
+      >Volver al menu</a>
+    <hr />
+    
+    <pre>
+        <code>
+    const saludar = function(nombre) {
+        console.log('Hola ' + nombre);
+    }
+
+    saludar();              // Hola undefined
+    saludar('Gabriel');     // Hola Gabriel
+</code>
+</pre>
+    <pre>
+<code>
+    function holamundo(nombre) {
+        var saludo = function () {
+            //nombre = 'Alejandro';
+            return 'Hola ' + nombre;
+        }
+        return saludo();
+    }
+
+    console.log(holamundo('Gabriel'));
+</code>
+</pre>
+    <pre>
+<code>
+    var globalVar = "xyz";
+
+    (function outerFunc(outerArg) {
+        var outerVar = 'soy A';
+
+        (function innerFunc(innerArg) {
+            var innerVar = 'soy B';
+
+            console.log(
+                "outerArg = " + outerArg + "\n" +
+                "innerArg = " + innerArg + "\n" +
+                "outerVar = " + outerVar + "\n" +
+                "innerVar = " + innerVar + "\n" +
+                "globalVar = " + globalVar);
+
+        })('soy Inner');
+    })('Soy outer');
+</code>
+</pre>
+    <pre>
+<code>
+    var scope = 'global';
+    var testScope = function(){
+    var scope = 'local';
+    function innerFunction(){
+        return scope;
+    }
+    return innerFunction;
+    }
+
+    var resultadofunction = testScope();
+    var resultadofinal = resultadofunction();
+    console.log (resultadofinal);
+</code>
+</pre>
+    <pre>
+<code>
+    var u = 50;
+    var someFunction = function() {
+    var i = 100
+    return (u + i);
+}
+
+console.log(someFunction());
+</code>
+</pre>
+    <pre>
+<code>
+    let app = (function(){
+        let carId = 7788;
+        let getId = function(){
+            return carId;
+        };
+        return {
+            getId: getId
+        };
+    })();
+
+    console.log( app.getId() );
+        </code>
+    </pre>
+  </body>
+</html>

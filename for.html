@@ -10,9 +10,8 @@
     <script>
    
         var itemCount1 = 5;
-
-        for (var i=0; i < itemCount1; i++)
-        console.log(i);
+        for (var i = 0; i < itemCount1; i++)
+        console.log(`itemCount1: ${i}`);
 
         //--------------//
 
@@ -71,9 +70,16 @@
     <pre>
         <code>     
     var itemCount1 = 5;
-
-    for (var i=0; i < itemCount1; i++)
-    console.log(i);
+    for (var i = 0; i < itemCount1; i++)
+    console.log(`itemCount1: ${i}`);
+    <div class="highlight">
+    itemCount1: 0
+    itemCount1: 1
+    itemCount1: 2
+    itemCount1: 3
+    itemCount1: 4
+    
+</div>
 </code>
 </pre>
     <pre>
@@ -89,7 +95,13 @@
         console.log(field + ': '+ lineItem[field]);
     }
     console.log(Object.keys(lineItem).length);
-            </code>
+    <div class="highlight">
+    product: Samsung s9
+    quantity: 4
+    brand: Samsung
+    price: 459.9
+
+</div></code>
 
     </pre>
     </body>

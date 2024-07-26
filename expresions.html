@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <title>Regular Expressions JS</title>
+
+</head>
+
+    <script>
+
+const re = /^\d+$/;                 //solo numeros
+const re2 =  /^\D+$/                // no hay numeros
+
+console.log(re.test('2'));          // true
+console.log(re.test('a3'));         // false
+console.log(re.test(15651815));     // true
+
+console.log(re2.test('gabriel'));   // true
+console.log(re2.test('23'));        // false
+console.log(re2.test('2ab'));       // false
+
+let cadena1 = "Te aplaude y te saluda jubilosa La hinchada deportiva que te admira";
+let cadena2 = "Campeón de cien jornadas victorios Valiente triunfador que orgullo inspira";
+
+const re3 = new RegExp('deportiva') ;   // busca 'deportiva en la cadena'
+console.log(re3.test(cadena1));         // true
+console.log(re3.test(cadena2));         // false
+
+
+    </script>
+<body class="p-5">
+
+    <h1>Regular Expressions</h1>
+    <h3>JAVASCRIPT</h3>
+    <a href="index.html" class="btn btn-primary" role="button" >Volver al menu</a>
+    <hr>
+    
+    <pre>
+        <code>     
+    const re = /^\d+$/;                 //solo numeros
+    const re2 =  /^\D+$/                // no hay numeros
+    
+    console.log(re.test('2'));          // true
+    console.log(re.test('a3'));         // false
+    console.log(re.test(15651815));     // true
+    
+    console.log(re2.test('gabriel'));   // true
+    console.log(re2.test('23'));        // false
+    console.log(re2.test('2ab'));       // false
+</code>
+</pre>
+    <pre>
+<code>
+    let cadena1 = "Te aplaude y te saluda jubilosa La hinchada deportiva que te admira";
+    let cadena2 = "Campeón de cien jornadas victorios Valiente triunfador que orgullo inspira";
+    
+    const re3 = new RegExp('deportiva') ;   // busca 'deportiva en la cadena'
+    console.log(re3.test(cadena1));         // true
+    console.log(re3.test(cadena2));         // false
+            </code>
+    </pre>
+    </body>
+
+</html>

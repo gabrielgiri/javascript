@@ -6,53 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
-    <title>Objects JS</title>
-    <style>
-        .highlight {
-            color: green;
-    background: black;
-    color: white;
-    font-weight: 500;
-        }
-    </style>
+    <title>Class JS</title>
     <script>
    
-        var user = {
-            name: "Gabriel",
-            age: 51,
+        class User {
+            constructor(name, age) {
+                this.name= name;
+                this.age= age;
+            }
+
             saludo()  {
 console.log("hola "  +  this.name)
             }
         }
 
-console.log(user);
-console.log(user.name);
-console.log("Mi edad es: " + user.age)
-user.saludo()
-
+const user1= new User("Pedro" , 35);
+const user2= new User("Mariana" , 42);
+console.log(user1);
+console.log(user2);
     </script>
 </head>
 <body class="p-5">
 
-    <h1>OBJECTS</h1>
+    <h1>CLASS</h1>
     <h3>JAVASCRIPT</h3>
     <a href="index.html" class="btn btn-primary" role="button" >Volver al menu</a>
     <hr>
     
     <pre>
         <code>     
-    var user = {
-        name: "Gabriel",
-        age: 51,
-    }
+    class User {
+        constructor(name, age) {
+            this.name= name;
+            this.age= age;
+        }
 
-    console.log(user);
-    console.log(user.name);
-    console.log("Mi edad es: " + user.age)
+        saludo()  {
+        console.log("hola "  +  this.name)
+        }
+    }
+    
+    const user1= new User("Pedro" , 35);
+    const user2= new User("Mariana" , 42);
+    console.log(user1);
+    console.log(user2);
     <div class="highlight">
-        Gabriel
-        objects.html:30 Mi edad es: 51
-        objects.html:24 hola Gabriel
+    User {name: 'Pedro', age: 35}
+    User {name: 'Mariana', age: 42}
     
 </div>
 </code>

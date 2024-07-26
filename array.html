@@ -4,16 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Array JS</title>
     <script>
+var hobbies = ["Futbol", "Padel", "Running", "Games", "Gym"];
+var hobbiesFemale = ["Danging", "MakeUp", "Movies", "Dinner"];
+hobbies.push("Music") // agrega Music al array
+hobbies.pop;
+console.log (hobbies);
+console.log(typeof(hobbies))
+console.log("Index position 2 is: " + hobbies[2]);
+console.log ("hobbies.length: " + hobbies.length);
+
+const index = hobbies.findIndex((item) => {
+  return (item === "Games");
+})
+
+const indexShort = hobbies.findIndex((item) => (item === "Gym"));
+
+console.log("Games is on position: " + index); // devuelve la posicion de "Games"
+console.log("Gym is on position: " + indexShort); // devuelve la posicion de "Gym"
+
+const editedHobbies = hobbies.map((item) => item + "!"); // devuelve un nuevo array
+console.log(editedHobbies);
+
+const mergeHobbies = [...hobbies, ...hobbiesFemale]; // spread operator
+console.log(mergeHobbies); // show all hobbies
+
+ //---------------------------------//
+
+ const [name, lastName] = ["John", "Lennon"];
+ console.log("The singer is: " + name + " " + lastName)
+
+ //---------------------------------//
+
       var myArray = [];
 
       myArray[0] = 1974;
@@ -27,47 +52,50 @@
       //---------------------------------//
 
       function range(max) {
-        var retVal = [];
-        for (var i = 0; i < max; i++) {
-          retVal.push(i * 2);
-        }
-        ultimoValor = retVal.pop();
-        console.log(ultimoValor);
-        return retVal;
-      }
+    var retVal = [];
+    for (var i = 0; i < max; i++) {
+        retVal.push(i * 2);
+    }
+    var ultimoValor = retVal.pop(); // Declaramos la variable correctamente
+    console.log(ultimoValor);
+    return retVal;
+}
 
-      console.log(range(30));
+console.log(range(30));
 
-      var sizeArray = range(5);
+var sizeArray = range(5);
 
-      for (var i = 0; i < sizeArray.length; i++) {
-        console.log(sizeArray[i]);
-      }
+for (var i = 0; i < sizeArray.length; i++) {
+    console.log(sizeArray[i]);
+}
+
 
       //---- Destructuring Arrays ----//
-
       let cartas = [1, 2, 3, 4, 5, 6, 7, 10, 11, 12];
 
-      var [card1, card2, card3] = cartas;
+// Usamos let para la desestructuración inicial
+let [card1, card2, card3] = cartas;
 
-      console.log(card1, card2, card3);
+console.log(card1, card2, card3); // Output: 1 2 3
 
-      var [card1, card2, card3, card4, ...elResto] = cartas;
+// Usamos let para la segunda desestructuración
+let [card1_2, card2_2, card3_2, card4, ...elResto] = cartas;
 
-      console.log(card1, card2, card3, card4, elResto);
+console.log(card1_2, card2_2, card3_2, card4, elResto); // Output: 1 2 3 4 [5, 6, 7, 10, 11, 12]
+
 
       //------///
 
       const arrayEjemplo = [];
-      arrayEjemplo[0] = 2020;
-      arrayEjemplo.push(1941);
-      arrayEjemplo.push("Gabriel");
+arrayEjemplo[0] = 2020;
+arrayEjemplo.push(1941);
+arrayEjemplo.push("Gabriel");
 
-      const arrayEjemplo2 = new Array(32, 53, "Juan", true, 001);
+const arrayEjemplo2 = new Array(32, 53, "Juan", true, 1); // Cambié 001 a 1
 
-      console.log(arrayEjemplo);
-      console.log(arrayEjemplo.length); // me muestra la cantidad de elementos del array
-      console.log(arrayEjemplo2);
+console.log(arrayEjemplo);
+console.log(arrayEjemplo.length); // Muestra la cantidad de elementos del array
+console.log(arrayEjemplo2);
     </script>
   </head>
 
@@ -80,25 +108,23 @@
     <hr />
     <pre><code>
 
-        var myArray = [];
-
-        myArray[0] = 1974;
-        myArray[1] = 2002;
-        myArray[2] = 1984;
-        myArray[3] = 1997;
-        myArray[4] = 1985;
-
-        console.log(myArray);
+    var hobbies = ["Futbol", "Padel", "Running", "Games", "Gym"];
+    hobbies.push("Music") // agrega Music al array
+    hobbies.pop;
+    console.log (hobbies);
+    console.log(typeof(hobbies))
+    console.log("Index position 2 is: " + hobbies[2]);
+    console.log (hobbies.length);
+    
+    const index = hobbies.findIndex((item) => {
+      return (item === "Games");
+    }) 
+    
+    console.log(index); // devuelve la posicion de "Games"
         <hr>
 
         </code></pre>
 
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-        labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
-    </div>
+
   </body>
 </html>
