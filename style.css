@@ -1,23 +1,110 @@
-pre {
-    background-color: #f4f4f4;
-    padding: 10px;
-    border: 1px solid #ccc;
-    overflow: auto;
-  }
-  
-  code {
-    color: #333;
-  }
-
-  .highlight {
-    color: green;
-background: black;
-color: white;
-font-weight: 500;
+/* ============================
+   ESTILO GENERAL (ya usado)
+============================ */
+body {
+  background: #f5f5f5;
+  font-family: "Segoe UI", Roboto, sans-serif;
 }
 
-ul li span {
+h1 {
+  font-weight: 700;
+  color: #333;
+}
+
+h3 {
+  margin-top: 25px;
+  color: #444;
+  border-left: 4px solid #dc3545;
+  padding-left: 10px;
+}
+
+/* Caja principal */
+.main-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================
+   GRID DE DOS COLUMNAS
+============================ */
+.two-column-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* ============================
+   ITEM DEL GRID
+============================ */
+.item-box {
+  background: #fafafa;
+  padding: 14px 18px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  transition: 0.2s ease;
+}
+
+.item-box:hover {
+  background: #f0f0f0;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.item-title {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Enlaces */
+.item-box a,
+p a,
+ol a {
+  font-weight: 600;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.item-box a:hover,
+p a:hover,
+ol a:hover {
+  text-decoration: underline;
+}
+
+/* ============================
+   LISTAS DE Kyle
+============================ */
+ol li span {
   font-weight: bold;
-  min-width: 70px;
-  display: inline-block;
+  margin-right: 6px;
+}
+
+/* ============================
+   SEPARACIÓN ENTRE SECCIONES
+============================ */
+p span {
+  font-weight: bold;
+}
+
+.btn-custom {
+  background-color: #007bff !important;
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block; /* ⬅ NECESARIO PARA QUE SE VEA */
+  text-decoration: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-custom:hover {
+  background-color: #0056b3 !important;
+  text-decoration: none;
 }

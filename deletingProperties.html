@@ -1,47 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
+
     <title>Deleting Properties JS</title>
+
     <script>
-        
-        var fechas = {a: 1985, b:1980, c:1974, d:2001 },
-            myVar= 10;
-       
-        delete fechas.a;
-        delete myVar; // no funciona? deberia usar 'use strict'
-   
-        console.log(fechas);
-        console.log(myVar);
+      var fechas = { a: 1985, b: 1980, c: 1974, d: 2001 },
+        myVar = 10;
 
+      delete fechas.a;
+      delete myVar; // No funciona: las variables no pueden borrarse
+
+      console.log(fechas);
+      console.log(myVar);
     </script>
-</head>
+  </head>
 
-<body class="p-5">
+  <body class="p-4">
+    <div class="container">
+      <div class="main-box">
+        <div class="content-box">
+          <h1>Deleting Properties</h1>
+          <h3>JAVASCRIPT</h3>
 
-    <h1>Deleting Properties</h1>
-    <h3>JAVASCRIPT</h3>
+          <a href="index.html" class="btn btn-custom text-white mt-3"
+            >⬅ Volver al menú</a
+          >
 
-    <a href="index.html" class="btn btn-primary" role="button" >Volver al menu</a>
-    <hr>
-    <p></p>
-    <pre>
-        <code>
-    var fechas = {a: 1985, b:1980, c:1974, d:2001 },
-    myVar= 10;
-    
-    delete fechas.a;
-    delete myVar; // no funciona? deberia usar 'use strict'
+          <hr />
 
-    console.log(fechas);
-    console.log(myVar);
-        </code>
-    </pre>
-    </body>
+          <p>
+            En JavaScript, <code>delete</code> solo funciona para borrar
+            propiedades de objetos. No borra variables declaradas en el ámbito
+            actual, a menos que sean propiedades del objeto global.
+          </p>
 
+          <pre><code class="language-js">
+var fechas = { a: 1985, b: 1980, c: 1974, d: 2001 },
+    myVar = 10;
+
+delete fechas.a;   // ✔ Funciona, elimina "a"
+delete myVar;      // ❌ NO funciona: las variables no pueden borrarse
+
+console.log(fechas);
+console.log(myVar);
+    </code></pre>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  </body>
 </html>
