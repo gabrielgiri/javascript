@@ -12,48 +12,77 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
     />
+
+    <!-- TU ARCHIVO DE ESTILOS -->
     <link rel="stylesheet" href="style.css" />
+
     <title>Array JS</title>
   </head>
 
   <body class="p-4">
     <div class="container">
       <div class="main-box">
-        <div class="content-box">
-          <h1>ARRAY</h1>
-          <h3>JAVASCRIPT</h3>
+        <h1 class="mb-0">ARRAY</h1>
+        <h3>JAVASCRIPT</h3>
 
-          <ul class="mt-3">
-            <li><span>push()</span> agrega un elemento al final</li>
-            <li><span>pop()</span> borra el último del array</li>
-            <li><span>shift()</span> borra el primero del array</li>
-            <li>
-              <span>unshift()</span> agrega un elemento al principio del array
-            </li>
-          </ul>
+        <p>
+          Los arrays son listas ordenadas. Estos son algunos métodos básicos:
+        </p>
 
-          <a href="index.html" class="btn btn-custom text-white mt-3"
-            >⬅ Volver al menú</a
-          >
+        <ul class="mt-3">
+          <li><span>push()</span> agrega un elemento al final</li>
+          <li><span>pop()</span> borra el último</li>
+          <li><span>shift()</span> borra el primero</li>
+          <li><span>unshift()</span> agrega al principio</li>
+        </ul>
 
-          <pre><code class="language-js">
+        <a href="index.html" class="btn-custom">⬅ Volver al menú</a>
+
+        <hr />
+
+        <!-- INTERACTIVO -->
+        <h3>🔹 Probar métodos del Array</h3>
+
+        <p>Array inicial:</p>
+        <pre><code class="language-js">let hobbies = ["Futbol", "Padel", "Running", "Games", "Gym"];</code></pre>
+
+        <button class="btn btn-primary btn-demo" onclick="demoPush()">
+          push()
+        </button>
+        <button class="btn btn-primary btn-demo" onclick="demoPop()">
+          pop()
+        </button>
+        <button class="btn btn-primary btn-demo" onclick="demoShift()">
+          shift()
+        </button>
+        <button class="btn btn-primary btn-demo" onclick="demoUnshift()">
+          unshift()
+        </button>
+        <button class="btn btn-warning btn-demo" onclick="resetArray()">
+          Reiniciar array
+        </button>
+
+        <h5 class="mt-4">Consola:</h5>
+        <div id="console" class="console-box"></div>
+
+        <hr class="my-5" />
+
+        <h3>Código del tutorial</h3>
+
+        <pre><code class="language-js">
 var hobbies = ["Futbol", "Padel", "Running", "Games", "Gym"];
 var hobbiesFemale = ["Dancing", "MakeUp", "Movies", "Dinner"];
 
-hobbies.pop(); // elimina ultimo elemento "gym"
-hobbies.push("Music") // agrega "Music" al final del array
-hobbies.shift(); // elimina el primer elemento "Futbol"
+hobbies.pop();
+hobbies.push("Music");
+hobbies.shift();
 
 console.log(hobbies);
-console.log(typeof(hobbies))
+console.log(typeof(hobbies));
 console.log("Index position 2 is: " + hobbies[2]);
-console.log ("hobbies.length: " + hobbies.length);
+console.log("hobbies.length: " + hobbies.length);
 
 const index = hobbies.findIndex((item) => item === "Games");
-const indexShort = hobbies.findIndex((item) => (item === "Padel"));
-
-console.log("Games is on position: " + index);
-console.log("Padel is on position: " + indexShort);
 
 const editedHobbies = hobbies.map((item) => item + "!");
 console.log(editedHobbies);
@@ -61,66 +90,61 @@ console.log(editedHobbies);
 const mergeHobbies = [...hobbies, ...hobbiesFemale];
 console.log(mergeHobbies);
 
-//---------------------------------//
-
+// Destructuring
 const [name, lastName] = ["John", "Lennon"];
 console.log("The singer is: " + name + " " + lastName);
-
-//---------------------------------//
-
-var myArray = [];
-myArray[0] = 1974;
-myArray[1] = 2002;
-myArray[2] = 1984;
-myArray[3] = 1997;
-myArray[4] = 1985;
-
-console.log(myArray);
-
-//---------------------------------//
-
-function range(max) {
-  var retVal = [];
-  for (var i = 0; i < max; i++) {
-      retVal.push(i * 2);
-  }
-  var ultimoValor = retVal.pop();
-  console.log(ultimoValor);
-  return retVal;
-}
-
-console.log(range(30));
-
-var sizeArray = range(5);
-for (var i = 0; i < sizeArray.length; i++) {
-  console.log(sizeArray[i]);
-}
-
-//---- Destructuring Arrays ----//
-let cartas = [1, 2, 3, 4, 5, 6, 7, 10, 11, 12];
-
-let [card1, card2, card3] = cartas;
-console.log(card1, card2, card3);
-
-let [card1_2, card2_2, card3_2, card4, ...elResto] = cartas;
-console.log(card1_2, card2_2, card3_2, card4, elResto);
-
-//------///
-const arrayEjemplo = [];
-arrayEjemplo[0] = 2020;
-arrayEjemplo.push(1941);
-arrayEjemplo.push("Gabriel");
-
-const arrayEjemplo2 = new Array(32, 53, "Juan", true, 1);
-
-console.log(arrayEjemplo);
-console.log(arrayEjemplo.length);
-console.log(arrayEjemplo2);
-    </code></pre>
-        </div>
+        </code></pre>
       </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <script>
+      let hobbies = ["Futbol", "Padel", "Running", "Games", "Gym"];
+
+      function print(msg) {
+        const c = document.getElementById("console");
+        c.innerHTML += msg + "<br>";
+        c.scrollTop = c.scrollHeight;
+      }
+
+      function clearConsole() {
+        document.getElementById("console").innerHTML = "";
+      }
+
+      function resetArray() {
+        hobbies = ["Futbol", "Padel", "Running", "Games", "Gym"];
+        clearConsole();
+        print("Array reiniciado:");
+        print(JSON.stringify(hobbies));
+      }
+
+      function demoPush() {
+        hobbies.push("Nuevo");
+        print('push("Nuevo") → ' + JSON.stringify(hobbies));
+      }
+
+      function demoPop() {
+        const removed = hobbies.pop();
+        print(
+          `pop() → quitó "${removed}". Nuevo array: ` + JSON.stringify(hobbies)
+        );
+      }
+
+      function demoShift() {
+        const removed = hobbies.shift();
+        print(
+          `shift() → quitó "${removed}". Nuevo array: ` +
+            JSON.stringify(hobbies)
+        );
+      }
+
+      function demoUnshift() {
+        hobbies.unshift("Inicio");
+        print('unshift("Inicio") → ' + JSON.stringify(hobbies));
+      }
+
+      // iniciar con contenido
+      resetArray();
+    </script>
   </body>
 </html>

@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    />
 
     <title>Closure JS</title>
 
@@ -99,39 +107,42 @@
   </head>
 
   <body class="p-5">
-    <h1>CLOSURE</h1>
-    <h3>JAVASCRIPT</h3>
-    
-      <p>
-        Es un patron donde podemos declarar funciones dentro de otras funciones
-      </p>
-   
+    <div class="container">
+      <div class="main-box">
+        <h1>CLOSURE</h1>
+        <h3>JAVASCRIPT</h3>
 
-    <a href="index.html" class="btn btn-primary" role="button"
-      >Volver al menu</a>
-    <hr />
-    
-    <pre>
+        <p>
+          Es un patron donde podemos declarar funciones dentro de otras
+          funciones
+        </p>
+
+        <a href="index.html" class="btn btn-primary" role="button"
+          >Volver al menu</a
+        >
+        <hr />
+
+        <pre>
       <code class="language-js">
-        const saludar = function (name) {
-          console.log("Hello " + name);
-        };
-  
-        saludar(); // Hello undefined
-        saludar("Gabriel"); // Hello Gabriel
-  
-        function holamundo(nombre) {
-          var saludo = function () {
-            nombre = "Alejandro";
-            return "Hola " + nombre;
-          };
-          return saludo();
-        }
-  
-        console.log(holamundo("Gabriel")); // Hola Alejandro
+    const saludar = function (name) {
+      console.log("Hello " + name);
+    };
+
+    saludar(); // Hello undefined
+    saludar("Gabriel"); // Hello Gabriel
+
+    function holamundo(nombre) {
+      var saludo = function () {
+        nombre = "Alejandro";
+        return "Hola " + nombre;
+      };
+      return saludo();
+    }
+
+    console.log(holamundo("Gabriel")); // Hola Alejandro
 </code>
 </pre>
-    <pre>
+        <pre>
       <code class="language-js">   
     function holamundo(nombre) {
         var saludo = function () {
@@ -144,7 +155,7 @@
     console.log(holamundo('Gabriel'));
 </code>
 </pre>
-    <pre>
+        <pre>
       <code class="language-js">   
     var globalVar = "xyz";
 
@@ -165,7 +176,7 @@
     })('Soy outer');
 </code>
 </pre>
-    <pre>
+        <pre>
       <code class="language-js">   
     var scope = 'global';
     var testScope = function(){
@@ -181,7 +192,7 @@
     console.log (resultadofinal);
 </code>
 </pre>
-    <pre>
+        <pre>
       <code class="language-js">   
   var u = 50;
   var someFunction = function () {
@@ -192,7 +203,7 @@
   console.log("someFunction: " + someFunction()); // 150
 </code>
 </pre>
-    <pre>
+        <pre>
       <code class="language-js">   
     let app = (function(){
         let carId = 7788;
@@ -207,7 +218,8 @@
     console.log( app.getId() );
         </code>
     </pre>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+      </div>
+    </div>
   </body>
 </html>

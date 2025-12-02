@@ -1,124 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Equals JS</title>
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- Prism -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+    <!-- Tus estilos -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="p-5">
+    <div class="container">
+      <div class="main-box">
+        <h1>Equals</h1>
+        <h3>JAVASCRIPT</h3>
+
+        <a href="index.html" class="btn btn-primary">Volver al menú</a>
+        <hr />
+
+        <pre><code class="language-js">
+var x = true;
+var y = "1";
+
+if (x == y) {
+  console.log("X , Y son iguales");
+} else {
+  console.log("X , Y NO son iguales");
+}
+        </code></pre>
+
+        <pre><code class="language-js">
+var varX;
+var varY = 1;
+
+if (varX) {
+  console.log("varX existe");
+} else {
+  console.log("varX No existe");
+}
+
+if (varY) {
+  console.log("varY existe");
+} else {
+  console.log("varY No existe");
+}
+        </code></pre>
+
+        <pre><code class="language-js">
+var number = 32;
+var name = "Gabriel";
+console.log(typeof number);
+console.log(typeof name);
+        </code></pre>
+
+        <pre><code class="language-js">
+var xxx = 132;
+var yyy = "132";
+
+if (xxx === yyy) {
+  console.log("son identicos");
+} else {
+  console.log("No son identicos porque xxx es " + typeof xxx + 
+    " mientras que yyy es " + typeof yyy);
+}
+        </code></pre>
+      </div>
+    </div>
+
+    <!-- Tu JS (al final para que cargue bien) -->
     <script>
+      var x = true;
+      var y = "1";
 
-        var x = true; // probar con true y 'true'
-        var y = '1';  
+      if (x == y) {
+        console.log("X , Y son iguales");
+      } else {
+        console.log("X , Y NO son iguales");
+      }
 
-        if (x == y) { // probar con ===
-            console.log('X , Y son iguales')
-        }
-        else {
-            console.log('X , Y NO son iguales')
-        };
+      var varX;
+      var varY = 1;
 
-        // -------------------------------//
+      if (varX) {
+        console.log("varX existe");
+      } else {
+        console.log("varX No existe");
+      }
 
-        var varX; 
-        var varY = 1; // probar tambien con 0 y '0' 
+      if (varY) {
+        console.log("varY existe");
+      } else {
+        console.log("varY No existe");
+      }
 
-        if (varX) {
-            console.log('varX existe')
-        } else {
-            console.log('varX No existe')
-        };
+      var number = 32;
+      var name = "Gabriel";
+      console.log(typeof number);
+      console.log(typeof name);
 
-        if (varY) {
-            console.log('varY existe')
-        } else {
-            console.log('varY No existe')
-        };
+      var xxx = 132;
+      var yyy = "132";
 
-        // -------------------------------//
-
-        var number = 32;
-        var name = "Gabriel";
-        console.log(typeof number);
-        console.log(typeof name);
-
-        // -------------------------------//
-
-        var xxx = 132;
-        var yyy = '132';
-
-        if (xxx === yyy) {
-            console.log('son identicos' + (typeof xxx) + ' ' + (typeof yyy))
-        } else {
-            console.log('No son identicos porque xxx es ' + (typeof xxx) + ' mientras que yyy es ' + (typeof yyy))
-        };
-
+      if (xxx === yyy) {
+        console.log("son identicos");
+      } else {
+        console.log(
+          "No son identicos porque xxx es " +
+            typeof xxx +
+            " mientras que yyy es " +
+            typeof yyy
+        );
+      }
     </script>
-</head>
-
-<body class="p-5">
-
-    <h1>Equals</h1>
-    <h3>JAVASCRIPT</h3>
-
-    <a href="index.html" class="btn btn-primary" role="button">Volver al menu</a>
-    <hr>
-    <p></p>
-    <pre>
-        <code>
-    var x = true; // probar con true y 'true'
-    var y = '1';  
-
-    if (x == y) { // probar con ===
-        console.log('X , Y son iguales')
-    }
-    else {
-        console.log('X , Y NO son iguales')
-    };
-        </code>
-    </pre>
-        <pre>
-    <code>
-    var varX; 
-    var varY = 1; // probar tambien con 0 y '0' 
-
-    if (varX) {
-        console.log('varX existe')
-    } else {
-        console.log('varX No existe')
-    };
-
-    if (varY) {
-        console.log('varY existe')
-    } else {
-        console.log('varY No existe')
-    };
-        </code>
-    </pre>
-        <pre>
-    <code>
-    var number = 32;
-    var name = "Gabriel";
-    console.log(typeof number);
-    console.log(typeof name);  
-        </code>
-    </pre>
-        <pre>
-    <code>
-    var xxx = 132;
-    var yyy = '132';
-
-    if (xxx === yyy) {
-        console.log('son identicos' + (typeof xxx) + ' ' + (typeof yyy))
-    } else {
-        console.log('No son identicos porque xxx es ' + (typeof xxx) + ' mientras que yyy es ' + (typeof yyy))
-    };
-</code>
-</pre>
-
-</body>
-
-
+  </body>
 </html>

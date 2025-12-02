@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    />
+
+    <!-- TU ARCHIVO DE ESTILOS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Call Stack JS</title>
+  </head>
+
+  <body class="p-4">
+    <div class="container">
+      <div class="main-box">
+        <h1 class="mb-0">Call Stack</h1>
+        <h3>JAVASCRIPT</h3>
+
+        <p>
+          Es una estructura de datos donde JavaScript guarda qué función se está
+          ejecutando en cada momento.
+        </p>
+
+        <ul class="mt-3">
+          <li><span>Call:</span> Llamada</li>
+          <li><span>Stack:</span> Pila</li>
+
+          <ul class="mt-3">
+            <strong>LIFO</strong>
+            <li><span>LI:</span> Último en entrar</li>
+            <li><span>FO:</span> Primero en salir</li>
+          </ul>
+        </ul>
+
+        <a href="index.html" class="btn-custom mt-2">⬅ Volver al menú</a>
+
+        <hr />
+
+        <!-- INTERACTIVO -->
+        <h3>Ejemplo interactivo</h3>
+
+        <p>Pulsa el botón para ver el Call Stack funcionando:</p>
+
+        <button id="runExample" class="btn btn-primary mb-3">
+          ▶ Ejecutar ejemplo
+        </button>
+
+        <h5>Consola:</h5>
+        <div id="console" class="console-box"></div>
+
+        <hr class="my-5" />
+
+        <h3>Código del tutorial</h3>
+
+        <pre><code class="language-js">
+// Funciones demostrativas del Call Stack
+function a() {
+  log("Entró en a()");
+  b();
+  log("Saliendo de a()");
+}
+
+function b() {
+  log("Entró en b()");
+  c();
+  log("Saliendo de b()");
+}
+
+function c() {
+  log("Entró en c()");
+  log("Función c ejecutada");
+  log("Saliendo de c()");
+}
+
+a(); // Inicio
+        </code></pre>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+    <script>
+      const output = document.getElementById("console");
+      const btn = document.getElementById("runExample");
+
+      function log(msg) {
+        const p = document.createElement("p");
+        p.textContent = msg;
+        output.appendChild(p);
+      }
+
+      function clearConsole() {
+        output.innerHTML = "";
+      }
+
+      // Funciones para el demo
+      function a() {
+        log("➡ Entró en a()");
+        b();
+        log("⬅ Saliendo de a()");
+      }
+
+      function b() {
+        log("➡ Entró en b()");
+        c();
+        log("⬅ Saliendo de b()");
+      }
+
+      function c() {
+        log("➡ Entró en c()");
+        log("Función c ejecutada");
+        log("⬅ Saliendo de c()");
+      }
+
+      btn.addEventListener("click", () => {
+        clearConsole();
+        a();
+      });
+    </script>
+  </body>
+</html>

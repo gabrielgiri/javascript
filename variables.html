@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Prism -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
     <title>Variables JS</title>
     <script>
-
-    document.querySelector("body").innerHTML="Hola Mundo";
-                    
+      document.querySelector("body").innerHTML = "Hola Mundo";
     </script>
-</head>
+  </head>
 
-<body class="p-5">
+  <body class="p-5">
+    <div class="container">
+      <div class="main-box">
+        <h1>VARIABLES</h1>
+        <h3>JAVASCRIPT</h3>
+        <a href="index.html" class="btn btn-primary" role="button"
+          >Volver al menu</a
+        >
+        <hr />
 
-<h1>VARIABLES</h1>
-<h3>JAVASCRIPT</h3>
-<a href="index.html" class="btn btn-primary" role="button" >Volver al menu</a>
-<hr>
-
-<p>Se usa para una coleccion donde los elementos no se pueden repetir y la busqueda debe ser eficiente</p>
-<pre>
-    <code>
+        <p>
+          Se usa para una coleccion donde los elementos no se pueden repetir y
+          la busqueda debe ser eficiente
+        </p>
+        <pre>
+   <code class="language-javascript"> 
 const map = new Map();
 
 map.set(1,2);
@@ -52,6 +69,7 @@ map.clear();
 console.log(elementos); 
     </code>
 </pre>
-</body>
-
+      </div>
+    </div>
+  </body>
 </html>

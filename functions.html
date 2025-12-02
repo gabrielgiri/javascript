@@ -1,88 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
- 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Prism -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
     <title>Functions JS</title>
     <script>
+      myFunction();
 
-        myFunction()
+      function myFunction() {
+        console.log("hola amigos");
+      }
 
-        function myFunction() {
-            console.log('hola amigos');
-        }
+      //-------------//
 
-   //-------------//
-
-    function arrancar(id) {
+      function arrancar(id) {
         let message = "Estamos arrancando!!";
         let arrancarFn = function moverLlave() {
-            let message = "Sobreescrito";
-        }
+          let message = "Sobreescrito";
+        };
         arrancarFn();
         console.log(message);
-    }
-    arrancar(123);
-  
-//-------------//
+      }
+      arrancar(123);
 
-    function startCar(CarId) {
-        let message="Starting ...";
+      //-------------//
+
+      function startCar(CarId) {
+        let message = "Starting ...";
         let startFn = function turnKey() {
-            let message="OVERRIDEN ...";
-            
+          let message = "OVERRIDEN ...";
         };
         startFn();
         console.log(message); // OVERRIDEN...
-    }
+      }
 
-    startCar(123);
+      startCar(123);
 
-//-------------//
+      //-------------//
 
-let messageLet = 'outside';
-if (5===5) {
-    let messageLet = 'equal';
-    console.log(messageLet); // equal
-}
-    console.log(messageLet); // outside
+      let messageLet = "outside";
+      if (5 === 5) {
+        let messageLet = "equal";
+        console.log(messageLet); // equal
+      }
+      console.log(messageLet); // outside
 
-var messageVar = 'outside';
-if (5===5) {
-    var messageVar = 'equal';
-    console.log(messageVar); // equal
-}
-    console.log(messageVar); // equal
+      var messageVar = "outside";
+      if (5 === 5) {
+        var messageVar = "equal";
+        console.log(messageVar); // equal
+      }
+      console.log(messageVar); // equal
 
-//---- IIFE's ----//
-// Immedialety Invoked Function Expression //
+      //---- IIFE's ----//
+      // Immedialety Invoked Function Expression //
 
-(function () {
-    console.log('in function');
-})();
+      (function () {
+        console.log("in function");
+      })();
 
-//---- Arrow Functions ----//
+      //---- Arrow Functions ----//
 
-let getId = () => 2019;
-console.log(getId()); // 2019 
+      let getId = () => 2019;
+      console.log(getId()); // 2019
 
-let getId2 = (prefix, suffix) => prefix + 23344054 + suffix;
-console.log(getId2('DNI: ', ':argentino')); // DNI:23344054:argentino 
-
-
+      let getId2 = (prefix, suffix) => prefix + 23344054 + suffix;
+      console.log(getId2("DNI: ", ":argentino")); // DNI:23344054:argentino
     </script>
-</head>
-<body class="p-5">
+  </head>
+  <body class="p-5">
+    <div class="container">
+      <div class="main-box">
+        <h1>Functions</h1>
+        <h3>JAVASCRIPT</h3>
+        <a href="index.html" class="btn btn-primary" role="button"
+          >Volver al menu</a
+        >
+        <hr />
 
-    <h1>Functions</h1>
-    <h3>JAVASCRIPT</h3>
-    <a href="index.html" class="btn btn-primary" role="button" >Volver al menu</a>
-    <hr>
-   
-    <pre><code>
+        <pre> <code class="language-javascript"> 
 myFunction()
 
 function myFunction() {
@@ -145,6 +157,7 @@ let getId2 = (prefix, suffix) => prefix + 23344054 + suffix;
 console.log(getId2('DNI: ', ':argentino')); // DNI:23344054:argentino 
 
     </code></pre>
-
-</body>
+      </div>
+    </div>
+  </body>
 </html>

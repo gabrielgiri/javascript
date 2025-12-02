@@ -1,94 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Prism -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Hoisting JS</title>
     <script>
+      (function () {
+        "use strict";
+        var result = 0;
 
-(function(){
-    'use strict';
-    var result = 0;
+        var sum = function (n1, n2) {
+          console.log("primero", result);
+          var result = n1 + n2;
+          return result;
+        };
 
-    var sum = function(n1, n2) {
-        console.log("primero" , result);
-        var result = n1 + n2;
-        return result;
-    };
+        sum(2, 3);
+        console.log("segundo", result);
+      })();
 
-    sum (2,3);
-    console.log("segundo", result);
-})();
+      //--------------------
 
-//--------------------
+      console.log("New Name: " + newName); // undefined
+      var newName = "Gabriel";
+      console.log("New Name: " + newName); // Gabriel
 
-console.log('New Name: ' + newName); // undefined
-var newName = "Gabriel";
-console.log('New Name: ' + newName); // Gabriel
+      //--------------------//
 
-//--------------------//
+      var myVar = 100;
 
-var myVar = 100;
+      function myFunction() {
+        myVar = 300;
+        var myVar;
+      }
+      myFunction();
+      console.log(myVar);
 
-function myFunction() {
-    myVar = 300;
-    var myVar;
-}
-myFunction();
-    console.log(myVar);
+      //--------------------//
 
-//--------------------//
+      var total = price * quantity;
+      var price = 3.0;
+      var quantity = 5;
 
-var total = price * quantity;
-var price = 3.00;
-var quantity = 5;
+      console.log(total); // Nan
 
-console.log(total); // Nan
+      //--------------------//
 
-//--------------------//
+      //showProduct(); // showProduct is not a function
+      var showProduct = function () {
+        console.log("1) Algo de Hoisting");
+      };
 
-//showProduct(); // showProduct is not a function
-var showProduct = function(){
-    console.log('1) Algo de Hoisting');
-}
+      showProduct(); // 1) Algo de Hoisting
 
-showProduct(); // 1) Algo de Hoisting
+      //--------------------//
 
+      showProduct2(); // 2) Algo de Hoisting
+      function showProduct2() {
+        console.log("2) Algo de Hoisting");
+      }
 
-//--------------------//
-
-showProduct2(); // 2) Algo de Hoisting
- function showProduct2(){
-    console.log('2) Algo de Hoisting');
-}
-
-showProduct2(); // 2) Algo de Hoisting
-
-
-
+      showProduct2(); // 2) Algo de Hoisting
     </script>
-</head>
-<body class="p-5">
+  </head>
+  <body class="p-5">
+    <div class="container">
+      <div class="main-box">
+        <h1>Hoisting</h1>
+        <h3>JAVASCRIPT</h3>
 
-    <h1>Hoisting</h1>
-    <h3>JAVASCRIPT</h3>
-
-    <a href="index.html" class="btn btn-primary" role="button">Volver al menu</a>
-    <hr>
-    <p>Las funciones se elevan</p>
-    <p>Variables VAR: Solo declaracion pero no la iniciacion</p>
-    <p>Variables CONST: No hace hoisting</p>
-    <pre>
-        <code>
+        <a href="index.html" class="btn btn-primary" role="button"
+          >Volver al menu</a
+        >
+        <hr />
+        <p>Las funciones se elevan</p>
+        <p>Variables VAR: Solo declaracion pero no la iniciacion</p>
+        <p>Variables CONST: No hace hoisting</p>
+        <pre>
+       <code class="language-javascript">
 console.log('New Name: ' + newName); // undefined
 var newName = "Gabriel";
 console.log('New Name: ' + newName); // Gabriel
     
 </code>
 </pre>
-
-</body>
+      </div>
+    </div>
+  </body>
 </html>

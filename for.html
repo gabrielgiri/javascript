@@ -1,74 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Prism -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
     <link rel="stylesheet" href="style.css" />
     <title>For JS</title>
     <script>
-   
-        var itemCount1 = 5;
-        for (var i = 0; i < itemCount1; i++)
-        console.log(`itemCount1: ${i}`);
+      var itemCount1 = 5;
+      for (var i = 0; i < itemCount1; i++) console.log(`itemCount1: ${i}`);
 
-        //--------------//
+      //--------------//
 
-        var itemCount2 = 15;
-        t=10;
+      var itemCount2 = 15;
+      t = 10;
 
-        for (; t < itemCount2; t++)
-        console.log(t);
+      for (; t < itemCount2; t++) console.log(t);
 
-        //--------------//
+      //--------------//
 
-        var itemCount3 = 5;
-        z=0;
+      var itemCount3 = 5;
+      z = 0;
 
-        for (; z < itemCount3;){
-            console.log(z++);
-            if (z==2)
-            break;
-        }
+      for (; z < itemCount3; ) {
+        console.log(z++);
+        if (z == 2) break;
+      }
 
-        //--------------//
+      //--------------//
 
-        var itemCount3 = 5;
-        z=0;
+      var itemCount3 = 5;
+      z = 0;
 
-        for (; z < itemCount3; z++){
-            
-        if (z==2)
-            continue;
+      for (; z < itemCount3; z++) {
+        if (z == 2) continue;
         console.log(z);
-        }
+      }
 
-        //--------------//
+      //--------------//
 
-        var lineItem = {
-            product: "Samsung s9",
-            quantity: 4,
-            brand: "Samsung",
-            price: 459.90
-        };
+      var lineItem = {
+        product: "Samsung s9",
+        quantity: 4,
+        brand: "Samsung",
+        price: 459.9,
+      };
 
-        for (var field in lineItem) {
-            console.log(field + ': '+ lineItem[field]);
-        }
-        console.log(Object.keys(lineItem).length);
-
+      for (var field in lineItem) {
+        console.log(field + ": " + lineItem[field]);
+      }
+      console.log(Object.keys(lineItem).length);
     </script>
-</head>
-<body class="p-5">
+  </head>
+  <body class="p-5">
+    <div class="container">
+      <div class="main-box">
+        <h1>FOR</h1>
+        <h3>JAVASCRIPT</h3>
+        <a href="index.html" class="btn btn-primary" role="button"
+          >Volver al menu</a
+        >
+        <hr />
 
-    <h1>FOR</h1>
-    <h3>JAVASCRIPT</h3>
-    <a href="index.html" class="btn btn-primary" role="button" >Volver al menu</a>
-    <hr>
-    
-    <pre>
-        <code>     
+        <pre>
+        <code class="language-javascript">  
     var itemCount1 = 5;
     for (var i = 0; i < itemCount1; i++)
     console.log(`itemCount1: ${i}`);
@@ -78,12 +87,11 @@
     itemCount1: 2
     itemCount1: 3
     itemCount1: 4
-    
 </div>
 </code>
 </pre>
-    <pre>
-<code>
+        <pre>
+<code class="language-javascript">
     var lineItem = {
         product: "Samsung s9",
         quantity: 4,
@@ -100,9 +108,10 @@
     quantity: 4
     brand: Samsung
     price: 459.9
-
 </div></code>
 
     </pre>
-    </body>
+      </div>
+    </div>
+  </body>
 </html>

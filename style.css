@@ -18,6 +18,11 @@ h3 {
   padding-left: 10px;
 }
 
+li span {
+  color: #dc3545;
+  font-weight: bold;
+}
+
 /* Caja principal */
 .main-box {
   background: #fff;
@@ -107,4 +112,24 @@ p span {
 .btn-custom:hover {
   background-color: #0056b3 !important;
   text-decoration: none;
+}
+
+/* ============================
+   CONSOLA INTERACTIVA
+============================ */
+.console-box {
+  background: #111;
+  padding: 15px;
+  border-radius: 6px;
+  color: #0f0;
+  font-family: monospace;
+  height: 200px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+/* Botones de demostración */
+.btn-demo {
+  margin-right: 10px;
+  margin-bottom: 10px;
 }

@@ -1,143 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-    crossorigin="anonymous"
-  />
-  <link rel="stylesheet" href="style.css" />
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <!-- PRISM -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
     <title>This JS</title>
-    <script>
+  </head>
 
+  <body class="p-5">
+    <div class="container">
+      <div class="main-box">
+        <h1>THIS</h1>
+        <h3>JAVASCRIPT</h3>
+
+        <p>Una referencia al objeto en el que se ejecuta una función.</p>
+        <p>El valor depende del contexto de ejecución.</p>
+
+        <a href="index.html" class="btn btn-primary mb-3">Volver al menú</a>
+        <hr />
+
+        <!-- EJEMPLO 1 -->
+        <pre><code class="language-javascript">
 const player = {
-    name: "Marco Ruben",
-    text: "EL maximo goleador",
-    club: "Rosario Central",
-    goles: 104,
-    mostrar() {
-        console.log(this);
-    },
-    cambiarTexto(text) {
-        this.text = text;
-    }
-}
+  name: "Marco Ruben",
+  text: "El máximo goleador",
+  club: "Rosario Central",
+  goles: 104,
+  mostrar() {
+    console.log(this);
+  },
+  cambiarTexto(text) {
+    this.text = text;
+  }
+};
+
 player.mostrar();
+  </code></pre>
 
+        <!-- EJEMPLO 2 -->
+        <pre><code class="language-javascript">
+function getName() {
+  console.log(`Mi nombre es: ${globalThis.name}`);
+}
 
-    //----------------//
-        function getName () {
-            console.log(`Mi nombre es: ${globalThis.name}`);
-        }
+globalThis.name = "Gabriel";
+getName();
+  </code></pre>
 
-        globalThis.name = "Gabriel";
-        getName();
+        <!-- EJEMPLO CALL -->
+        <pre><code class="language-javascript">
+let o = {
+  carId: 123,
+  getId: function () {
+    return this.carId;
+  }
+};
 
-    let o = {
-        carId: 123,
-        getId: function(){
-            return this.carId;
-        }
-    };
+let newCar = { carId: 456 };
 
-    let newCar = {carId: 456};
+console.log(o.getId());            // 123
+console.log(o.getId.call(newCar)); // 456
+  </code></pre>
 
-    console.log( o.getId() ); // 123
-    console.log( o.getId.call(newCar) ); //   456
+        <!-- EJEMPLO BIND -->
+        <pre><code class="language-javascript">
+// ---- BIND ---- //
 
-    //---- BIND ----//
+let oo = {
+  valor: 888,
+  getId: function () {
+    return this.valor;
+  }
+};
 
-    let oo = {
-        valor: 888,
-        getId: function(){
-            return this.valor;
-        }
-    };
+let newValor = { valor: 999 };
+let newFn = oo.getId.bind(newValor);
 
-    let newValor = {valor: 999};
-    let newFn = oo.getId.bind(newValor);
+console.log(newFn()); // 999
+  </code></pre>
+      </div>
+    </div>
+    <script>
+      // todo tu JS real va acá:
 
-    console.log( newFn() ); // 123
-
-    let player1 = {Nombre: "Gabriel"};
-    let player2 = {Nombre: "Alejandro"};
-    
-
-    </script>
-</head>
-
-<body class="p-5">
-
-    <h1>THIS</h1>
-    <h3>JAVASCRIPT</h3>
-    <p>Una referencia al objeto en que se llama a una funcions</p>
-    <p>Es una referencia al contexto donde se ejecuta</p>
-    <a href="index.html" class="btn btn-primary" role="button" >Volver al menu</a>
-    <hr>
-    <p></p>
-    <pre>
-        <code>
-    name: "Marco Ruben",
-    text: "EL maximo goleador",
-    club: "Rosario Central",
-    goles: 104,
-    mostrar() {
-            console.log(this);
+      const player = {
+        name: "Marco Ruben",
+        text: "EL maximo goleador",
+        club: "Rosario Central",
+        goles: 104,
+        mostrar() {
+          console.log(this);
         },
         cambiarTexto(text) {
-            this.text = text;
-        }
-    }
-    player.mostrar();
-    </code>
-</pre>    <pre>
-    <code>
-    function getName () {
+          this.text = text;
+        },
+      };
+      player.mostrar();
+
+      // globalThis example
+      function getName() {
         console.log(`Mi nombre es: ${globalThis.name}`);
-    }
+      }
+      globalThis.name = "Gabriel";
+      getName();
 
-    globalThis.name = "Gabriel";
-    getName();
-</code>
-</pre>    <pre>
-    <code>
-    let o = {
+      // call
+      let o = {
         carId: 123,
-        getId: function(){
-            return this.carId;
-        }
-    };
+        getId: function () {
+          return this.carId;
+        },
+      };
+      let newCar = { carId: 456 };
+      console.log(o.getId());
+      console.log(o.getId.call(newCar));
 
-    let newCar = {carId: 456};
-
-    console.log( o.getId() ); // 123
-    console.log( o.getId.call(newCar) ); //   456
-    </code>
-</pre>    <pre>
-    <code>
-    //---- BIND ----//
-
-    let oo = {
+      // bind
+      let oo = {
         valor: 888,
-        getId: function(){
-            return this.valor;
-        }
-    };
+        getId: function () {
+          return this.valor;
+        },
+      };
+      let newValor = { valor: 999 };
+      let newFn = oo.getId.bind(newValor);
 
-    let newValor = {valor: 999};
-    let newFn = oo.getId.bind(newValor);
+      console.log(newFn());
 
-    console.log( newFn() ); // 123
-
-    let player1 = {Nombre: "Gabriel"};
-    let player2 = {Nombre: "Alejandro"};
-        </code>
-    </pre>
-    </body>
-
+      let player1 = { Nombre: "Gabriel" };
+      let player2 = { Nombre: "Alejandro" };
+    </script>
+  </body>
 </html>
