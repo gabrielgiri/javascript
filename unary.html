@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
- 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+        <link rel="stylesheet" href="style.css" />
     <title>Unary</title>
     <script>
-   
+      let year = 2021;
+      console.log(year); // 2021
+      console.log(year++); // 2021
+      console.log(year); // 2022
+
+      let birth = "1973";
+      console.log(typeof birth); // string
+      console.log(typeof +birth); // number
+    </script>
+  </head>
+    <div class="container">
+      <div class="main-box">
+    <h1>Unary</h1>
+    <h3>JAVASCRIPT</h3>
+    <p>En JavaScript, Unary se refiere a los operadores unarios, es decir, operadores que trabajan con un solo operando.</p>
+    <a href="index.html" class="btn btn-primary" role="button"
+      >Volver al menu</a
+    >
+    <hr />
+
+    <pre><code class="language-js">
     let year = 2021;
     console.log(year)    // 2021
     console.log(year++)  // 2021
@@ -17,27 +45,9 @@
     let birth = "1973";
     console.log(typeof(birth))    // string
     console.log(typeof(+birth))   // number
-
-    </script>
-</head>
-<body class="p-5">
-
-    <h1>Unary</h1>
-    <h3>JAVASCRIPT</h3>
-    <a href="index.html" class="btn btn-primary" role="button" >Volver al menu</a>
-    <hr>
-   
-    <pre><code>
-        let year = 2021;
-        console.log(year)    // 2021
-        console.log(year++)  // 2021
-        console.log(year)    // 2022
-    
-        let birth = "1973";
-        console.log(typeof(birth))    // string
-        console.log(typeof(+birth))   // number
   
     </code></pre>
-
-</body>
+          </div>
+    </div>
+  </body>
 </html>
