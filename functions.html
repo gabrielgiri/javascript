@@ -89,31 +89,44 @@
       <div class="main-box">
         <h1>Functions</h1>
         <h3>JAVASCRIPT</h3>
+        <p>
+          En JavaScript, una función es un bloque de código reutilizable que
+          sirve para realizar una tarea específica. Podés definirla una vez y
+          ejecutarla (llamarla) todas las veces que quieras.
+        </p>
+        <ul>
+          <li>Evitar repetir código</li>
+          <li>Organizar mejor el programa</li>
+          <li>Recibir datos (parámetros)</li>
+          <li>Devolver un resultado (return)</li>
+        </ul>
         <a href="index.html" class="btn btn-primary" role="button"
           >Volver al menu</a
         >
         <hr />
 
-        <pre> <code class="language-javascript"> 
+       <pre> <code class="language-javascript"> 
 myFunction()
 
 function myFunction() {
     console.log('hola amigos'); // hola amigos
 }
-
-//-------------//
-
+    </code></pre>
+ <pre> <code class="language-javascript"> 
 function arrancar(id) {
     let message = "Estamos arrancando!!";
+
     let arrancarFn = function moverLlave() {
-        let message = "Sobreescrito";
+        return "Sobreescrito";
     }
-    arrancarFn();
+
+    message = arrancarFn();
     console.log(message);
 }
-arrancar(123);
 
-//-------------//
+arrancar(123);
+    </code></pre>
+ <pre> <code class="language-javascript"> 
 
 function startCar(CarId) {
     let message="Starting ...";
@@ -125,7 +138,8 @@ function startCar(CarId) {
 
 startCar(123);
 
-//-------------//
+    </code></pre>
+ <pre> <code class="language-javascript"> 
 
 let messageLet = 'outside';
 if (5===5) {
@@ -156,7 +170,7 @@ console.log(getId()); // 2019
 let getId2 = (prefix, suffix) => prefix + 23344054 + suffix;
 console.log(getId2('DNI: ', ':argentino')); // DNI:23344054:argentino 
 
-    </code></pre>
+
       </div>
     </div>
   </body>

@@ -7,46 +7,52 @@
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
     <link rel="stylesheet" href="style.css" />
 
     <title>Spread Operator JS</title>
 
     <script>
-      const numeros = [4,5,6,27,18];
-   let numeroscopiados = [...numeros];
-   numeroscopiados[0] = 464;
-   console.log (numeros);
-      console.log (numeroscopiados);
-
-
+      const numeros = [4, 5, 6, 27, 18];
+      let numeroscopiados = [...numeros];
+      numeroscopiados[0] = 464;
+      console.log(numeros);
+      console.log(numeroscopiados);
 
       const nombres = ["Juan", "Martin", "Diego", "Gabriel"];
       const otrosnombres = ["Pedro", "Alejandro", "Ezequiel", "Ignacio"];
-   console.log (...nombres, ...otrosnombres, "Ruben");
-    
+      console.log(...nombres, ...otrosnombres, "Ruben");
 
-
+      const equipos = ["Central", "Boca", "River", "Lanus", "Talleres"];
+      console.log(equipos); // ['Central', 'Boca', 'River', 'Lanus', 'Talleres']
+      console.log(...equipos); // Central Boca River Lanus Talleres
     </script>
   </head>
 
-  <body class="p-5">
-    <h1>Spread Operator</h1>
-    <h3>JAVASCRIPT</h3>
-    
-      <p>
-        El spread operator que incorpora ECMAScript 6 en JavaScript es un operador que simplifica la recogida de valores en una estructura de datos. Su representa con tres puntos: ...
-      </p>
-   
+  <body class="p-4">
+    <div class="container">
+      <div class="main-box">
+        <h1>Spread Operator</h1>
+        <h3>JAVASCRIPT</h3>
 
-    <a href="index.html" class="btn btn-primary" role="button"
-      >Volver al menu</a>
-    <hr />
-    
-    <pre>
-        <code>
+        <p>
+          El spread operator que incorpora ECMAScript 6 en JavaScript es un
+          operador que simplifica la recogida de valores en una estructura de
+          datos. Su representa con tres puntos: ...
+        </p>
+
+        <a href="index.html" class="btn btn-primary" role="button"
+          >Volver al menu</a
+        >
+        <hr />
+
+        <pre><code class="language-js">
     const numeros = [4,5,6,27,18];
     let numeroscopiados = [...numeros];
     numeroscopiados[0] = 464;
@@ -56,7 +62,24 @@
     const nombres = ["Juan", "Martin", "Diego", "Gabriel"];
     const otrosnombres = ["Pedro", "Alejandro", "Ezequiel", "Ignacio"];
     console.log (...nombres, ...otrosnombres, "Ruben");
+    // Juan Martin Diego Gabriel Pedro Alejandro Ezequiel Ignacio Ruben
 </code>
 </pre>
+        <p>
+          El spread operator que incorpora ECMAScript 6 en JavaScript es un
+          operador que simplifica la recogida de valores en una estructura de
+          datos. Su representa con tres puntos: ...
+        </p>
+        <pre>
+
+<code class="language-js">
+    const equipos = ["Central", "Boca", "River", "Lanus", "Talleres"];
+    console.log(equipos); // ['Central', 'Boca', 'River', 'Lanus', 'Talleres']
+    console.log(...equipos); // Central Boca River Lanus Talleres
+</code>
+
+</pre>
+      </div>
+    </div>
   </body>
 </html>

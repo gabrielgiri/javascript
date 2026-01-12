@@ -1,86 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" />
-    <title>MAP JS</title>  
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+  <!-- Prism -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+  />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+  <title>MAP JS</title>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Map JS</title>
     <script>
+const map = new Map();
 
-    // MAP
+map.set(1, 2);
+map.set(1980, 1986);
 
-    const map = new Map();
+map.set("Ciudad", "Barcelona"); // se sobrescribe
+map.set("Ciudad", "Madrid");    // se sobrescribe
+map.set("Ciudad", "Sevilla");   // valor final
 
-    map.set(1,2);
-    map.set(1980, 1986);
-    map.set("Ciudad", "Barcelona"); // se pisa con sevilla
-    map.set("Ciudad", "Madrid"); // se pisa con sevilla
-    map.set("Ciudad", "Sevilla");
-    map.set("Pais", "España");
-    map.set("nombre", "Gabriel");
-    map.set("nombre", "Gabriel"); // notese que no se repite
+map.set("Pais", "España");
 
-    const elementos = map.entries();
+map.set("nombre", "Gabriel");
+map.set("nombre", "Gabriel");   // se sobrescribe, mismo valor
 
-    console.log(map); 
-    console.log(elementos); 
-                    
-    map.delete("nombre");
-    console.log(elementos); 
+const elementos = map.entries(); // iterador, NO copia
 
-    map.forEach(elemento => {
-        console.log(elemento)
-    });
+console.log(map);        // Map completo
+console.log(elementos);  // MapIterator
 
-    map.clear();
-    console.log(elementos); 
-                    
+map.delete("nombre");    // elimina la clave
+console.log(elementos);  // el iterador refleja el cambio
+
+map.forEach((valor, clave) => {
+    console.log(clave, valor);
+});
+
+map.clear();             // vacía el Map
+console.log(elementos);  // iterador ya sin datos
+
+
+const dias = new Map();
+
+dias.set(1, "Lunes");
+dias.set(2, "Martes");
+dias.set(3, "Miércoles");
+dias.set(4, "Jueves");
+dias.set(5, "Viernes");
+dias.set(6, "Sábado");
+dias.set(7, "Domingo");
+
+console.log(dias);
+console.log(dias.get(3)); // Miercoles
+console.log("Hay ", dias.size, " dias");
     </script>
-</head>
+  </head>
 
-<body class="p-5">
-
-<h1>MAP</h1>
-<h3>JAVASCRIPT</h3>
-<hr>
-<p>Se usa para una coleccion donde los elementos no se pueden repetir y la busqueda debe ser eficiente</p>
-<hr>
-<a href="index.html" class="btn btn-primary" role="button">Volver al menu</a>
-<pre>
+  <body class="p-4">
+    <div class="container">
+      <div class="main-box">
+    <h1>MAP</h1>
+    <h3>JAVASCRIPT</h3>
+    <hr />
+    <p>
+      Se usa para una coleccion donde los elementos no se pueden repetir y la
+      busqueda debe ser eficiente
+    </p>
+    <hr />
+    <a href="index.html" class="btn btn-primary" role="button"
+      >Volver al menu</a
+    >
+    <pre>
     <code class="language-js">
-    const map = new Map();
-    map.set(1,2);
-    map.set(1980, 1986);
-    map.set("Ciudad", "Barcelona"); // se pisa con sevilla
-    map.set("Ciudad", "Madrid"); // se pisa con sevilla
-    map.set("Ciudad", "Sevilla");
-    map.set("Pais", "España");
-    map.set("nombre", "Gabriel");
-    map.set("nombre", "Gabriel"); // notese que no se repite
+const map = new Map();
 
-    const elementos = map.entries();
+map.set(1, 2);
+map.set(1980, 1986);
 
-    console.log(map); 
-    console.log(elementos); 
-                    
-    map.delete("nombre");
-    console.log(elementos); 
+map.set("Ciudad", "Barcelona"); // se sobrescribe
+map.set("Ciudad", "Madrid");    // se sobrescribe
+map.set("Ciudad", "Sevilla");   // valor final
 
-    map.forEach(elemento => {
-        console.log(elemento)
-    });
+map.set("Pais", "España");
 
-    map.clear();
-    console.log(elementos); 
+map.set("nombre", "Gabriel");
+map.set("nombre", "Gabriel");   // se sobrescribe, mismo valor
+
+const elementos = map.entries(); // iterador, NO copia
+
+console.log(map);        // Map completo
+console.log(elementos);  // MapIterator
+
+map.delete("nombre");    // elimina la clave
+console.log(elementos);  // el iterador refleja el cambio
+
+map.forEach((valor, clave) => {
+    console.log(clave, valor);
+});
+
+map.clear();             // vacía el Map
+console.log(elementos);  // iterador ya sin datos
     </code>
 </pre>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
-</body>
+    <pre>
+    <code class="language-js">
+const dias = new Map();
+dias.set(1, "Lunes");
+dias.set(2, "Martes");
+dias.set(3, "Miércoles");
+dias.set(4, "Jueves");
+dias.set(5, "Viernes");
+dias.set(6, "Sábado");
+dias.set(7, "Domingo");
 
+console.log(dias);
+console.log(dias.get(3)); // Miercoles
+console.log("Hay ", dias.size, " dias");
+          </code>
+</pre>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  </body>
+   </div>
+    </div>
+  </html>
 </html>
